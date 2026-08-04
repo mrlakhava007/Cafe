@@ -1,173 +1,202 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>19's Cafe | Premium Restaurant</title>
+<title>19's Cafe | Premium Cafe</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
+font-family:Poppins,Arial;
 }
+
 body{
-background:#0f0f0f;
-color:#fff;
+background:#fff8f0;
+color:#333;
 }
 
 header{
-position:fixed;
-width:100%;
-padding:18px 8%;
+background:#24140b;
+color:white;
+padding:20px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,0,0,.75);
-backdrop-filter:blur(10px);
-z-index:1000;
 }
 
 .logo{
-font-size:30px;
+font-size:32px;
 font-weight:bold;
-color:#ffb703;
+color:#d9a441;
 }
 
 nav a{
-color:#fff;
+color:white;
 text-decoration:none;
-margin-left:25px;
-transition:.3s;
-}
-
-nav a:hover{
-color:#ffb703;
+margin:15px;
 }
 
 .hero{
-height:100vh;
-background:url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80") center/cover;
+height:90vh;
+background:
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4")
+center/cover;
+
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-}
-
-.overlay{
-background:rgba(0,0,0,.65);
-padding:60px;
-border-radius:15px;
+color:white;
 }
 
 .hero h1{
 font-size:60px;
-margin-bottom:20px;
 }
 
 .hero p{
-font-size:20px;
-margin-bottom:30px;
+font-size:22px;
+margin:20px;
 }
 
 .btn{
-background:#ffb703;
-padding:15px 35px;
-color:#000;
+background:#d9a441;
+padding:15px 30px;
+border-radius:30px;
+color:white;
 text-decoration:none;
-border-radius:50px;
-font-weight:bold;
 }
+
 
 section{
-padding:90px 8%;
+padding:60px 8%;
 }
 
-.section-title{
-font-size:40px;
-margin-bottom:40px;
+.title{
 text-align:center;
-color:#ffb703;
+font-size:35px;
+margin-bottom:40px;
+color:#5a3218;
 }
 
-.grid{
+
+.menu{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
 
-.card{
-background:#1b1b1b;
-border-radius:15px;
-overflow:hidden;
-transition:.3s;
-}
 
-.card:hover{
-transform:translateY(-10px);
-}
-
-.card img{
-width:100%;
-height:220px;
-object-fit:cover;
-}
-
-.card-content{
+.food{
+background:white;
 padding:20px;
+border-radius:15px;
+box-shadow:0 5px 20px #ddd;
+text-align:center;
+}
+
+
+.food img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:15px;
+}
+
+.food h3{
+margin:15px;
 }
 
 .price{
-font-size:22px;
-color:#ffb703;
-margin:10px 0;
+color:#b47b15;
+font-size:20px;
+font-weight:bold;
 }
 
+
 button{
-width:100%;
-padding:12px;
+background:#5a3218;
+color:white;
 border:none;
-background:#ffb703;
-font-size:16px;
-font-weight:bold;
-border-radius:8px;
+padding:12px 20px;
+border-radius:20px;
 cursor:pointer;
 }
 
+
 .cart{
 position:fixed;
-bottom:20px;
 right:20px;
-background:#ffb703;
-color:#000;
-padding:18px 25px;
-border-radius:50px;
+bottom:20px;
+background:#d9a441;
+padding:15px 25px;
+border-radius:40px;
+color:white;
 font-weight:bold;
 }
 
-footer{
-background:#111;
-text-align:center;
-padding:40px;
-margin-top:50px;
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
 }
 
-.contact{
-text-align:center;
-line-height:2;
+.gallery img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:15px;
 }
+
+
+.review{
+background:white;
+padding:20px;
+border-radius:15px;
+margin:10px;
+}
+
+
+.booking{
+text-align:center;
+}
+
+
+input,textarea{
+width:80%;
+padding:15px;
+margin:10px;
+border-radius:10px;
+border:1px solid #ccc;
+}
+
+
+footer{
+background:#24140b;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+
 </style>
 
 </head>
+
+
 <body>
+
 
 <header>
 
-<div class="logo">19's Cafe</div>
+<div class="logo">
+19's Cafe
+</div>
 
 <nav>
 <a href="#">Home</a>
@@ -178,127 +207,239 @@ line-height:2;
 
 </header>
 
-<section class="hero">
 
-<div class="overlay">
 
-<h1>Premium Dining Experience</h1>
+<div class="hero">
 
-<p>Fresh Food • Coffee • Desserts • Fast Delivery</p>
+<div>
 
-<a href="#menu" class="btn">Order Now</a>
+<h1>Welcome To 19's Cafe</h1>
+
+<p>Premium Food • Coffee • Luxury Ambience</p>
+
+<a class="btn" href="#menu">
+Order Now
+</a>
 
 </div>
 
-</section>
+</div>
+
+
 
 <section id="menu">
 
-<h2 class="section-title">Popular Menu</h2>
+<h2 class="title">
+Our Special Menu
+</h2>
 
-<div class="grid">
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80">
-<div class="card-content">
-<h3>Cheese Burger</h3>
-<p>Juicy grilled burger with cheese.</p>
-<div class="price">₹199</div>
-<button onclick="addItem('Cheese Burger',199)">Add to Cart</button>
-</div>
-</div>
+<div class="menu">
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80">
-<div class="card-content">
-<h3>Italian Pizza</h3>
-<p>Wood-fired cheese pizza.</p>
-<div class="price">₹349</div>
-<button onclick="addItem('Italian Pizza',349)">Add to Cart</button>
-</div>
+
+<div class="food">
+
+<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38">
+
+<h3>Cheese Pizza</h3>
+
+<p class="price">₹249</p>
+
+<button onclick="add('Cheese Pizza')">
+Add Order
+</button>
+
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80">
-<div class="card-content">
+
+
+<div class="food">
+
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd">
+
+<h3>Classic Burger</h3>
+
+<p class="price">₹179</p>
+
+<button onclick="add('Burger')">
+Add Order
+</button>
+
+</div>
+
+
+
+
+<div class="food">
+
+<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
+
 <h3>Cappuccino</h3>
-<p>Fresh premium coffee.</p>
-<div class="price">₹149</div>
-<button onclick="addItem('Coffee',149)">Add to Cart</button>
-</div>
+
+<p class="price">₹129</p>
+
+<button onclick="add('Coffee')">
+Add Order
+</button>
+
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=800&q=80">
-<div class="card-content">
-<h3>Chocolate Shake</h3>
-<p>Rich chocolate milkshake.</p>
-<div class="price">₹179</div>
-<button onclick="addItem('Chocolate Shake',179)">Add to Cart</button>
+
+
+<div class="food">
+
+<img src="https://images.unsplash.com/photo-1551024506-0bccd828d307">
+
+<h3>Chocolate Dessert</h3>
+
+<p class="price">₹149</p>
+
+<button onclick="add('Dessert')">
+Add Order
+</button>
+
 </div>
-</div>
+
 
 </div>
 
 </section>
+
+
+
 
 <section id="gallery">
 
-<h2 class="section-title">Gallery</h2>
+<h2 class="title">
+Cafe Gallery
+</h2>
 
-<div class="grid">
 
-<img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=700&q=80">
+<div class="gallery">
 
-<img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=700&q=80">
+<img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b">
 
-<img src="https://images.unsplash.com/photo-1515669097368-22e68427d265?auto=format&fit=crop&w=700&q=80">
+<img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb">
+
+<img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8">
 
 </div>
 
+
 </section>
+
+
+
+
+<section>
+
+<h2 class="title">
+Customer Reviews
+</h2>
+
+
+<div class="review">
+⭐⭐⭐⭐⭐
+<br>
+"Best cafe experience. Amazing food and ambience."
+</div>
+
+
+<div class="review">
+⭐⭐⭐⭐⭐
+<br>
+"Perfect place for family and friends."
+</div>
+
+
+</section>
+
+
+
+
+<section class="booking">
+
+<h2 class="title">
+Book A Table
+</h2>
+
+
+<input placeholder="Your Name">
+
+<br>
+
+<input placeholder="Phone Number">
+
+<br>
+
+<input placeholder="Date">
+
+<br>
+
+<button>
+Book Now
+</button>
+
+
+</section>
+
+
+
 
 <section id="contact">
 
-<h2 class="section-title">Contact</h2>
+<h2 class="title">
+Contact
+</h2>
 
-<div class="contact">
+<center>
 
-<p>📍 19's Cafe, Surendranagar</p>
+<p>📍 19's cafe, surendernager</p>
 
-<p>📞 +91 90811 55344</p>
+<p>📞 +91 9081155344</p>
 
-<p>📧 info@19scafe.com</p>
+<p>WhatsApp Ordering Available</p>
 
-<p>🕘 10:00 AM – 11:00 PM</p>
 
-</div>
+</center>
+
 
 </section>
 
+
+
+<div class="cart">
+
+Cart: <span id="count">0</span>
+
+</div>
+
+
+
 <footer>
 
-© 2026 19's Cafe | Premium Restaurant
+© 2026 19's Cafe | Premium Dining Experience
 
 </footer>
 
-<div class="cart" id="cart">
-🛒 Cart (0) ₹0
-</div>
+
 
 <script>
 
 let count=0;
-let total=0;
 
-function addItem(name,price){
+function add(item){
+
 count++;
-total+=price;
-document.getElementById("cart").innerHTML=
-"🛒 Cart ("+count+") ₹"+total;
+
+document.getElementById("count").innerHTML=count;
+
+alert(item+" added to cart");
+
 }
 
 </script>
+
 
 </body>
 </html>
