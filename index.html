@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>19's Cafe</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+body{
+    background:#f8f5f2;
+    color:#333;
+}
+header{
+    background:#3b2416;
+    color:#fff;
+    padding:20px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+header h1{
+    font-size:32px;
+}
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+.hero{
+    height:90vh;
+    background:url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1400&q=80') center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.hero-content{
+    background:rgba(0,0,0,.6);
+    color:white;
+    padding:40px;
+    text-align:center;
+    border-radius:10px;
+}
+.hero h2{
+    font-size:50px;
+}
+.hero p{
+    margin:20px 0;
+}
+.btn{
+    background:#d4a017;
+    color:white;
+    padding:12px 25px;
+    text-decoration:none;
+    border-radius:5px;
+}
+section{
+    padding:60px 10%;
+}
+.menu{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+.card{
+    background:white;
+    border-radius:10px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 5px 10px rgba(0,0,0,.1);
+}
+.card h3{
+    color:#3b2416;
+}
+.contact{
+    text-align:center;
+}
+footer{
+    background:#3b2416;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+<h1>19's Cafe</h1>
+
+<nav>
+<a href="#">Home</a>
+<a href="#menu">Menu</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h2>Welcome to 19's Cafe</h2>
+<p>Fresh Coffee • Delicious Food • Great Ambience</p>
+<a href="#menu" class="btn">View Menu</a>
+</div>
+</section>
+
+<section id="about">
+<h2>About Us</h2>
+<br>
+<p>
+At <strong>19's Cafe</strong>, we serve premium coffee, delicious pizzas,
+burgers, sandwiches, desserts, and refreshing beverages in a warm and
+comfortable atmosphere.
+</p>
+</section>
+
+<section id="menu">
+<h2>Our Menu</h2>
+<br>
+
+<div class="menu">
+
+<div class="card">
+<h3>☕ Coffee</h3>
+<p>Starting from ₹99</p>
+</div>
+
+<div class="card">
+<h3>🍕 Pizza</h3>
+<p>Starting from ₹199</p>
+</div>
+
+<div class="card">
+<h3>🍔 Burger</h3>
+<p>Starting from ₹149</p>
+</div>
+
+<div class="card">
+<h3>🥤 Cold Drinks</h3>
+<p>Starting from ₹59</p>
+</div>
+
+<div class="card">
+<h3>🍰 Desserts</h3>
+<p>Starting from ₹129</p>
+</div>
+
+<div class="card">
+<h3>🥪 Sandwich</h3>
+<p>Starting from ₹119</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="contact">
+<h2>Contact Us</h2>
+<br>
+<p>📍 surendernager</p>
+<p>📞 +91 9081155344</p>
+<p>✉️ info@19scafe.com</p>
+</section>
+
+<footer>
+<p>© 2026 19's Cafe | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
