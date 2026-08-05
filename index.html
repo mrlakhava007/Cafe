@@ -723,25 +723,25 @@ margin-top:25px;
 
 <div class="booking-box">
 
-<input type="text" placeholder="Your Name">
+<input type="text" id="bookName" placeholder="Your Name">
 
-<input type="tel" placeholder="Phone Number">
+<input type="tel" id="bookPhone" placeholder="Phone Number">
 
-<input type="date">
+<input type="date" id="bookDate">
 
-<input type="time">
+<input type="time" id="bookTime">
 
-<select>
-<option>2 Persons</option>
-<option>4 Persons</option>
-<option>6 Persons</option>
-<option>8 Persons</option>
+<select id="bookPersons">
+    <option>2 Persons</option>
+    <option>4 Persons</option>
+    <option>6 Persons</option>
+    <option>8 Persons</option>
 </select>
 
-<textarea placeholder="Special Request"></textarea>
+<textarea id="bookRequest" placeholder="Special Request"></textarea>
 
-<button class="book-btn">
-Book Table
+<button class="book-btn" onclick="bookTable()">
+    Book Table
 </button>
 
 </div>
@@ -801,6 +801,33 @@ document.getElementById("topBtn").style.display="none";
 
 }
 
+</script>
+<script>
+function bookTable(){
+
+let name = document.getElementById("bookName").value;
+let phone = document.getElementById("bookPhone").value;
+let date = document.getElementById("bookDate").value;
+let time = document.getElementById("bookTime").value;
+let persons = document.getElementById("bookPersons").value;
+let request = document.getElementById("bookRequest").value;
+
+let message =
+`*🍽️ Table Booking - 19's Cafe*
+
+*Name:* ${name}
+*Phone:* ${phone}
+*Date:* ${date}
+*Time:* ${time}
+*Guests:* ${persons}
+*Special Request:* ${request}`;
+
+window.open(
+"https://wa.me/919081155344?text=" + encodeURIComponent(message),
+"_blank"
+);
+
+}
 </script>
 
 </body>
