@@ -780,47 +780,13 @@ Customer Details
 </h3>
 
 
+<input type="text" id="customerName" placeholder="Customer Name" required>
 
-<input 
-type="text"
-id="customerName"
-placeholder="Full Name">
+<input type="tel" id="customerPhone" placeholder="Customer Number" required>
 
+<input type="text" id="tableNumber" placeholder="Table Number / Parcel">
 
-
-<input 
-type="tel"
-id="customerPhone"
-placeholder="Phone Number">
-
-
-
-<textarea
-id="customerAddress"
-placeholder="Delivery Address">
-</textarea>
-
-
-
-
-<select id="payment">
-
-<option>
-Cash On Delivery
-</option>
-
-<option>
-UPI Payment
-</option>
-
-<option>
-Card Payment
-</option>
-
-</select>
-
-
-
+<textarea id="customerAddress" placeholder="Delivery Address"></textarea>
 
 <button class="order-btn"
 onclick="generateBill()">
@@ -1298,56 +1264,41 @@ sendWhatsApp();
 }
 
 
-
-
-
+  
 
 function sendWhatsApp(){
 
+let name = document.getElementById("customerName").value;
+let phone = document.getElementById("customerPhone").value;
+let table = document.getElementById("tableNumber").value;
+let address = document.getElementById("customerAddress").value;
 
+let total = document.getElementById("billTotal").innerText;
 
-let message=
-"*19's Cafe Order*%0A%0A";
+let message = "🍽️ *19's Cafe - New Order*%0A%0A";
 
+message += "👤 *Customer:* " + name + "%0A";
+message += "📞 *Phone:* " + phone + "%0A";
+message += "🪑 *Table:* " + table + "%0A";
+message += "📍 *Address:* " + address + "%0A%0A";
 
+message += "🛒 *Order Items*%0A";
 
 cart.forEach(item=>{
-
-
-message+=
-item.name+
-" x "+
-item.qty+
-" = ₹"+
-(item.price*item.qty)+
-"%0A";
-
-
+message += "• " + item.name + " x " + item.qty + " = ₹" + (item.price * item.qty) + "%0A";
 });
 
-
-
-message+="%0ATotal: ₹"+
-document.getElementById("billTotal").innerHTML;
-
-
-
-message+="%0A%0ACustomer: "+
-document.getElementById("customerName").value;
-
-
+message += "%0A💰 *Grand Total:* ₹" + total;
 
 window.open(
-
-"https://wa.me/919081155344?text="+message,
-
+"https://wa.me/919081155344?text=" + message,
 "_blank"
-
 );
 
-
 }
-
+  
+  
+  
 
 </script>
   
