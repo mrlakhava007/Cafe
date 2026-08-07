@@ -1423,53 +1423,30 @@ text-align:center;
 
 <div class="booking-box">
 
+<input type="text" id="bookName" placeholder="Customer Name" required>
 
-<input 
-id="tableName"
-placeholder="Your Name">
+<input type="tel" id="bookPhone" placeholder="Mobile Number" required>
 
+<input type="number" id="tableNo" placeholder="Table Number" required>
 
+<input type="date" id="bookDate" required>
 
-<input
-id="tablePhone"
-placeholder="Phone Number">
+<input type="time" id="bookTime" required>
 
+<select id="persons">
+    <option>1 Person</option>
+    <option>2 Persons</option>
+    <option>3 Persons</option>
+    <option>4 Persons</option>
+    <option>5 Persons</option>
+    <option>6 Persons</option>
+</select>
 
+<textarea id="specialRequest" placeholder="Special Request"></textarea>
 
-<input
-id="tableDate"
-type="date">
-
-
-
-<input
-id="tableTime"
-type="time">
-
-
-
-
-<input id="tablepertion"
-  placeholder="pertion">
-
-
-
-<textarea
-id="request"
-placeholder="Special Request">
-</textarea>
-
-
-
-
-<button class="book-btn"
-onclick="bookTable()">
-
+<button onclick="bookTable()" class="book-btn">
 Book Table
-
 </button>
-
-
 
 </div>
 
@@ -1478,7 +1455,37 @@ Book Table
 </section>
 
 
+<script>
+function bookTable(){
 
+let name = document.getElementById("bookName").value;
+let phone = document.getElementById("bookPhone").value;
+let table = document.getElementById("tableNo").value;
+let date = document.getElementById("bookDate").value;
+let time = document.getElementById("bookTime").value;
+let persons = document.getElementById("persons").value;
+let request = document.getElementById("specialRequest").value;
+
+let message =
+`🍽️ *19's Cafe - Table Booking*
+
+👤 Customer: ${name}
+📞 Mobile: ${phone}
+🪑 Table No: ${table}
+👥 Guests: ${persons}
+📅 Date: ${date}
+⏰ Time: ${time}
+
+📝 Special Request:
+${request}`;
+
+window.open(
+"https://wa.me/919081155344?text=" + encodeURIComponent(message),
+"_blank"
+);
+
+}
+</script>
 
 
 
