@@ -1303,125 +1303,13 @@ window.open(
 </script>
   
   
-  
-  
-  <!-- TABLE BOOKING -->
+  <!-- TABLE BOOKING SECTION -->
 
 <section id="booking">
 
+<h2>Book Your Table</h2>
 
-<h2 class="title">
-Book A Table
-</h2>
-
-
-<style>
-
-.booking-box{
-
-max-width:700px;
-margin:auto;
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.12);
-
-}
-
-
-.booking-box input,
-.booking-box textarea,
-.booking-box select{
-
-width:100%;
-padding:14px;
-margin:10px 0;
-border:1px solid #ddd;
-border-radius:10px;
-
-}
-
-
-.book-btn{
-
-width:100%;
-padding:15px;
-background:#24140b;
-color:white;
-border:none;
-border-radius:30px;
-font-size:17px;
-cursor:pointer;
-
-}
-
-
-.book-btn:hover{
-
-background:#d4a017;
-color:#222;
-
-}
-
-
-
-.gallery-grid{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-
-}
-
-
-
-.gallery-grid img{
-
-width:100%;
-height:230px;
-object-fit:cover;
-border-radius:20px;
-
-}
-
-
-
-
-.review-grid{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-
-}
-
-
-
-.review-card{
-
-background:white;
-padding:25px;
-border-radius:20px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-
-}
-
-
-
-.contact-box{
-
-text-align:center;
-
-}
-
-
-</style>
-
-
-
-
-
-<div class="booking-box">
+<div class="booking-form">
 
 <input type="text" id="bookName" placeholder="Customer Name" required>
 
@@ -1434,59 +1322,63 @@ text-align:center;
 <input type="time" id="bookTime" required>
 
 <select id="persons">
-    <option>1 Person</option>
-    <option>2 Persons</option>
-    <option>3 Persons</option>
-    <option>4 Persons</option>
-    <option>5 Persons</option>
-    <option>6 Persons</option>
+<option value="">Select Guests</option>
+<option>1 Person</option>
+<option>2 Persons</option>
+<option>3 Persons</option>
+<option>4 Persons</option>
+<option>5 Persons</option>
+<option>6 Persons</option>
+<option>8 Persons</option>
+<option>10 Persons</option>
 </select>
 
-<textarea id="specialRequest" placeholder="Special Request"></textarea>
+<textarea id="specialRequest" placeholder="Special Request (Optional)"></textarea>
 
-<button onclick="bookTable()" class="book-btn">
-Book Table
-</button>
+<button onclick="bookTable()">Book Table</button>
 
 </div>
 
-
-
 </section>
 
-
 <script>
+
 function bookTable(){
 
-let name = document.getElementById("bookName").value;
-let phone = document.getElementById("bookPhone").value;
-let table = document.getElementById("tableNo").value;
-let date = document.getElementById("bookDate").value;
-let time = document.getElementById("bookTime").value;
-let persons = document.getElementById("persons").value;
-let request = document.getElementById("specialRequest").value;
+let name=document.getElementById("bookName").value.trim();
+let phone=document.getElementById("bookPhone").value.trim();
+let table=document.getElementById("tableNo").value.trim();
+let date=document.getElementById("bookDate").value;
+let time=document.getElementById("bookTime").value;
+let persons=document.getElementById("persons").value;
+let request=document.getElementById("specialRequest").value.trim();
+
+if(name=="" || phone=="" || table=="" || date=="" || time=="" || persons==""){
+
+alert("Please fill all required fields.");
+
+return;
+
+}
 
 let message =
-`🍽️ *19's Cafe - Table Booking*
-
-👤 Customer: ${name}
-📞 Mobile: ${phone}
-🪑 Table No: ${table}
-👥 Guests: ${persons}
-📅 Date: ${date}
-⏰ Time: ${time}
-
-📝 Special Request:
-${request}`;
+"🍽️ *19's Cafe - Table Booking*%0A%0A"+
+"👤 *Customer:* "+name+"%0A"+
+"📞 *Mobile:* "+phone+"%0A"+
+"🪑 *Table No:* "+table+"%0A"+
+"📅 *Date:* "+date+"%0A"+
+"🕒 *Time:* "+time+"%0A"+
+"👥 *Guests:* "+persons+"%0A"+
+"📝 *Special Request:* "+request;
 
 window.open(
-"https://wa.me/919081155344?text=" + encodeURIComponent(message),
+"https://wa.me/919081155344?text="+message,
 "_blank"
 );
 
 }
-</script>
 
+</script>
 
 
 
