@@ -795,7 +795,7 @@ Our
 </button>
 
 <button onclick="scrollToCategory('colddrink')">
-🥤 Cold Drinks
+🍻 Cold Drinks
 </button>
 
 <button onclick="scrollToCategory('sandwich')">
@@ -803,7 +803,7 @@ Our
 </button>
 
 <button onclick="scrollToCategory('pasta')">
-🍝 Pasta
+🍜 Pasta
 </button>
 
 <button onclick="scrollToCategory('fries')">
@@ -815,7 +815,7 @@ Our
 </button>
 
 <button onclick="scrollToCategory('starters')">
-🍽️ Starters
+🍱 Starters
 </button>
 
 <button onclick="scrollToCategory('dessert')">
@@ -1014,7 +1014,7 @@ class="menu-category"
 id="colddrink">
 
 <h2 class="category-title">
-🥤 Cold Drinks
+🍻 Cold Drinks
 </h2>
 
 
@@ -1202,7 +1202,7 @@ class="menu-category"
 id="pasta">
 
 <h2 class="category-title">
-🍝 Pasta
+🍜 Pasta
 </h2>
 
 
@@ -1422,7 +1422,7 @@ class="menu-category"
 id="starters">
 
 <h2 class="category-title">
-🍽️ Starters
+🍱 Starters
 </h2>
 
 
@@ -4629,141 +4629,138 @@ function renderOrderHistory(){
 function sendWhatsApp(){
 
     if(!currentOrder){
-
-        alert(
-        "No current order found."
-        );
-
+        alert("No current order found.");
         return;
-
     }
 
+    const order = currentOrder;
 
-    const order =
-    currentOrder;
+    let message =
+        "🟢 *19's CAFE - NEW ORDER*\n" +
+        "━━━━━━━━━━━━━━━━━━━━\n\n";
 
-
-    let message="";
-
-
-    if(order.orderNumber===1){
-
-        message =
-        "🟢 *NEW ORDER - 19's Cafe*";
-
-    }else{
-
-        message =
-        "🔵 *ADDITIONAL ORDER - 19's Cafe*";
-
-    }
-
+    /* ORDER DETAILS */
 
     message +=
-    "%0A%0A";
-
-
-    message +=
-    "🧾 *Order #:* "
-    +order.orderNumber
-    +"%0A";
-
+        "🧾 *ORDER NUMBER:* #" +
+        order.orderNumber +
+        "\n";
 
     message +=
-    "📄 *Bill No:* "
-    +order.billNumber
-    +"%0A";
-
-
-    message +=
-    "👤 *Customer:* "
-    +order.customerName
-    +"%0A";
-
+        "📄 *Bill No:* " +
+        order.billNumber +
+        "\n";
 
     message +=
-    "📞 *Number:* "
-    +order.customerPhone
-    +"%0A";
+        "📅 *Date:* " +
+        order.date +
+        "\n\n";
 
 
-    message +=
-    "🪑 *Table:* "
-    +order.table
-    +"%0A";
-
+    /* CUSTOMER DETAILS */
 
     message +=
-    "📍 *Address:* "
-    +order.address
-    +"%0A";
-
+        "👤 *CUSTOMER DETAILS*\n" +
+        "━━━━━━━━━━━━━━━━━━━━\n";
 
     message +=
-    "🍴 *Order Type:* "
-    +order.orderType
-    +"%0A%0A";
-
+        "Name: " +
+        order.customerName +
+        "\n";
 
     message +=
-    "*THIS ORDER*%0A";
+        "Mobile: " +
+        order.customerPhone +
+        "\n";
+
+    message +=
+        "Table No: " +
+        order.table +
+        "\n";
+
+    message +=
+        "Address: " +
+        order.address +
+        "\n";
+
+    message +=
+        "Order Type: " +
+        order.orderType +
+        "\n\n";
 
 
-    order.items.forEach(
-        item=>{
+    /* ORDERED ITEMS */
+
+    message +=
+        "🍽️ *ORDERED ITEMS*\n" +
+        "━━━━━━━━━━━━━━━━━━━━\n";
+
+
+    order.items.forEach((item, index) => {
+
+        const itemTotal =
+            item.price * item.qty;
 
         message +=
-        "• "
-        +item.name
-        +" × "
-        +item.qty
-        +" = ₹"
-        +(item.price*item.qty)
-        +"%0A";
+            (index + 1) +
+            ". " +
+            item.name +
+            " × " +
+            item.qty +
+            " = ₹" +
+            itemTotal +
+            "\n";
 
     });
 
 
+    /* TOTAL */
+
     message +=
-    "%0A💰 *THIS ORDER TOTAL: ₹"
-    +order.total
-    +"*%0A";
+        "━━━━━━━━━━━━━━━━━━━━\n";
+
+    message +=
+        "💰 *ORDER TOTAL: ₹" +
+        order.total +
+        "*\n";
 
 
-    if(order.orderNumber>1){
+    /* PREVIOUS ORDERS */
+
+    if(order.orderNumber > 1){
 
         message +=
-        "%0A🔄 *PREVIOUS ORDERS TODAY:* "
-        +order.previousTotal
-        +"%0A";
-
+            "\n🔄 *PREVIOUS ORDERS TODAY: ₹" +
+            order.previousTotal +
+            "*\n";
 
         message +=
-        "💰 *TODAY'S COMBINED TOTAL: ₹"
-        +order.combinedTotal
-        +"*%0A";
+            "💰 *TODAY'S TOTAL: ₹" +
+            order.combinedTotal +
+            "*\n";
 
     }
 
 
     message +=
-    "%0A📲 Order from 19's Cafe website.";
+        "\nThank you for ordering from\n" +
+        "*19's Cafe* ❤️";
 
 
-    const url =
-    "https://wa.me/"
-    +WHATSAPP_NUMBER
-    +"?text="
-    +message;
+    /* WHATSAPP */
+
+    const whatsappURL =
+        "https://wa.me/" +
+        WHATSAPP_NUMBER +
+        "?text=" +
+        encodeURIComponent(message);
 
 
     window.open(
-        url,
+        whatsappURL,
         "_blank"
     );
-
 }
-
 
 /* ==========================================
    DOWNLOAD BILL
