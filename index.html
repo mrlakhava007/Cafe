@@ -1,1930 +1,2450 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>19's Cafe | Premium Restaurant</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+<title>19's Cafe | Premium Cafe</title>
 
 <style>
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
 
 body{
-background:#fff8f0;
-color:#333;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#faf7f2;
+    color:#24140b;
 }
 
+button,input,textarea,select{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
 
 /* NAVBAR */
 
-header{
-
-position:fixed;
-top:0;
-width:100%;
-background:#24140b;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 8%;
-z-index:1000;
-
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:70px;
+    z-index:9999;
+    background:#17100c;
+    display:grid;
+    grid-template-columns:60px 1fr 60px;
+    align-items:center;
+    padding:0 18px;
+    box-shadow:0 3px 15px rgba(0,0,0,.35);
 }
-
 
 .logo{
-
-font-size:32px;
-font-weight:700;
-color:#d4a017;
-
+    text-align:center;
+    color:#d4a017;
+    font-size:25px;
+    font-weight:bold;
 }
 
-
-nav a{
-
-color:white;
-text-decoration:none;
-margin-left:20px;
-font-size:16px;
-
+.menu-toggle{
+    background:none;
+    border:0;
+    color:#fff;
+    font-size:29px;
 }
 
-
-nav a:hover{
-
-color:#d4a017;
-
+.cart-icon{
+    position:relative;
+    color:#fff;
+    text-decoration:none;
+    font-size:26px;
+    text-align:right;
 }
 
+#cartCount{
+    position:absolute;
+    top:-9px;
+    right:-5px;
+    min-width:19px;
+    height:19px;
+    border-radius:50%;
+    background:#d4a017;
+    color:#17100c;
+    font-size:11px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* SIDE MENU */
+
+.side-menu{
+    position:fixed;
+    top:0;
+    left:-290px;
+    width:290px;
+    height:100vh;
+    background:#17100c;
+    z-index:10000;
+    padding:80px 25px 30px;
+    display:flex;
+    flex-direction:column;
+    transition:.3s;
+    box-shadow:5px 0 25px rgba(0,0,0,.4);
+}
+
+.side-menu.active{
+    left:0;
+}
+
+.side-menu a{
+    color:#fff;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+    padding:16px;
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.side-menu a:hover{
+    color:#d4a017;
+}
+
+.close-menu{
+    position:absolute;
+    top:18px;
+    right:20px;
+    background:none;
+    border:0;
+    color:#fff;
+    font-size:35px;
+}
+
+/* PAGES */
+
+.page{
+    display:none;
+    min-height:100vh;
+    padding-top:70px;
+}
+
+.page.active{
+    display:block;
+}
 
 /* HERO */
 
 .hero{
+    min-height:calc(100vh - 70px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:50px 20px;
 
-height:100vh;
-
-background:
-linear-gradient(
-rgba(0,0,0,.55),
-rgba(0,0,0,.55)
-),
-url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4")
-center/cover;
-
-
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-color:white;
-
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4")
+    center/cover;
 }
 
+.hero-content{
+    color:#fff;
+    max-width:850px;
+}
 
 .hero h1{
-
-font-size:65px;
-
+    font-size:65px;
+    margin-bottom:15px;
 }
 
+.hero h1 span{
+    color:#d4a017;
+}
 
 .hero p{
-
-font-size:22px;
-margin:20px 0;
-
+    font-size:20px;
+    margin-bottom:30px;
 }
-
 
 .btn{
-
-display:inline-block;
-background:#d4a017;
-color:#222;
-padding:14px 35px;
-border-radius:30px;
-text-decoration:none;
-font-weight:600;
-
+    display:inline-block;
+    background:#d4a017;
+    color:#17100c;
+    padding:14px 30px;
+    border-radius:30px;
+    border:0;
+    text-decoration:none;
+    font-weight:bold;
 }
-
 
 .btn:hover{
-
-background:white;
-
+    background:#fff;
 }
-
 
 /* COMMON */
 
-section{
-
-padding:90px 8%;
-
+.section{
+    padding:80px 6%;
 }
 
-
-.title{
-
-text-align:center;
-font-size:40px;
-color:#24140b;
-margin-bottom:40px;
-
+.section-title{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:40px;
 }
 
+.section-title span{
+    color:#d4a017;
+}
 
 /* ABOUT */
 
-
 .about{
-
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:center;
-
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
 }
-
 
 .about img{
-
-width:100%;
-border-radius:20px;
-
+    width:100%;
+    height:380px;
+    object-fit:cover;
+    border-radius:20px;
 }
 
-
-.about p{
-
-font-size:18px;
-line-height:1.8;
-
+.about-text{
+    line-height:1.8;
 }
 
-
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-header{
-
-flex-direction:column;
-
+.about-text p{
+    color:#555;
+    margin-bottom:18px;
 }
 
+/* FEATURES */
 
-nav{
-
-margin-top:15px;
-
+.features{
+    max-width:1100px;
+    margin:50px auto 0;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
-
-.hero h1{
-
-font-size:40px;
-
+.feature{
+    background:#fff;
+    padding:30px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
 }
 
-
-.about{
-
-grid-template-columns:1fr;
-
+.feature-icon{
+    font-size:40px;
+    margin-bottom:12px;
 }
 
+.feature h3{
+    margin-bottom:10px;
 }
 
+.feature p{
+    color:#666;
+}
+
+@media(max-width:800px){
+    .hero h1{
+        font-size:43px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .section{
+        padding:60px 5%;
+    }
+
+    .section-title{
+        font-size:32px;
+    }
+}
 </style>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  
-  
 </head>
-
 
 <body>
 
+<header class="navbar">
 
-<!-- NAVBAR -->
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
-<header>
+<div class="logo">19's Cafe</div>
 
-<div class="logo">
-19's Cafe
-</div>
-
-
-<nav>
-
-<a href="#home">Home</a>
-
-<a href="#about">About</a>
-
-<a href="#menu">Menu</a>
-
-<a href="#cart">
-🛒 Cart (<span id="cartCount">0</span>)
+<a href="#" class="cart-icon"
+onclick="showPage('cart');return false;">
+🛒
+<span id="cartCount">0</span>
 </a>
-
-<a href="#contact">Contact</a>
-
-
-</nav>
-
 
 </header>
 
+<nav class="side-menu" id="sideMenu">
 
+<button class="close-menu" onclick="toggleMenu()">×</button>
 
+<a href="#" onclick="showPage('home');return false;">🏠 Home</a>
+<a href="#" onclick="showPage('menu');return false;">📋 Menu</a>
+<a href="#" onclick="showPage('cart');return false;">🛒 Cart</a>
+<a href="#" onclick="showPage('booking');return false;">🍽️ Book Table</a>
+<a href="#" onclick="showPage('gallery');return false;">📸 Gallery</a>
+<a href="#" onclick="showPage('contact');return false;">📞 Contact</a>
 
-<!-- HERO -->
+</nav>
 
+<main id="home" class="page active">
 
-<section class="hero" id="home">
+<section class="hero">
 
-
-<div>
-
+<div class="hero-content">
 
 <h1>
-Welcome To 19's Cafe
+Welcome to <span>19's Cafe</span>
 </h1>
 
-
 <p>
-Premium Food • Coffee • Luxury Experience
+Premium Food • Fresh Coffee • Great Experience
 </p>
 
-
-<a href="#menu" class="btn">
-Order Now
-</a>
-
+<button class="btn" onclick="showPage('menu')">
+View Menu
+</button>
 
 </div>
 
-
 </section>
 
+<section class="section">
 
-
-
-
-<!-- ABOUT -->
-
-
-<section id="about">
-
-
-<h2 class="title">
-About Us
+<h2 class="section-title">
+About <span>19's Cafe</span>
 </h2>
-
-
 
 <div class="about">
 
+<img
+src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb"
+alt="19's Cafe">
 
-<img src="https://images.unsplash.com/photo-1552566626-52f8b828add9">
-
-
-<div>
-
+<div class="about-text">
 
 <p>
-
-Welcome to <b>19's Cafe</b>. 
-We serve delicious food, premium coffee,
-fresh desserts and amazing dining experiences.
-
-Our goal is to provide quality food with
-a comfortable and luxurious cafe atmosphere.
-
+Welcome to 19's Cafe — a modern place to enjoy
+delicious food, refreshing drinks and quality time
+with friends and family.
 </p>
 
+<p>
+Choose your favourite items, add them to your cart
+and place your order directly from our website.
+</p>
 
-<br>
-
-
-<a href="#menu" class="btn">
-View Menu
-</a>
-
-
-</div>
-
+<button class="btn" onclick="showPage('menu')">
+Order Now
+</button>
 
 </div>
+</div>
 
+<div class="features">
+
+<div class="feature">
+<div class="feature-icon">☕</div>
+<h3>Fresh Coffee</h3>
+<p>Freshly prepared beverages for every mood.</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">🍽️</div>
+<h3>Quality Food</h3>
+<p>Delicious food prepared with quality ingredients.</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">❤️</div>
+<h3>Great Experience</h3>
+<p>A comfortable place to enjoy with your loved ones.</p>
+</div>
+
+</div>
 
 </section>
 
-  
+</main>
+<!-- MENU PAGE -->
 
+<section id="menu" class="page">
 
-<section id="menu">
+<div class="section">
 
-<h2 class="title">
-Our Premium Menu
+<h2 class="section-title">
+Our <span>Menu</span>
 </h2>
 
+<div class="category-buttons">
 
-<style>
-
-.menu-grid{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-
-}
-
-
-.food-card{
-
-background:white;
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 8px 25px rgba(0,0,0,.12);
-transition:.3s;
-
-}
-
-
-.food-card:hover{
-
-transform:translateY(-10px);
-
-}
-
-
-
-.food-card img{
-
-width:100%;
-height:230px;
-object-fit:cover;
-
-}
-
-
-
-.food-info{
-
-padding:20px;
-text-align:center;
-
-}
-
-
-
-.food-info h3{
-
-font-size:22px;
-color:#24140b;
-
-}
-
-
-
-.food-info p{
-
-color:#666;
-font-size:14px;
-
-}
-
-
-
-.price{
-
-font-size:24px;
-font-weight:bold;
-color:#d4a017;
-margin:12px;
-
-}
-
-
-
-.add-btn{
-
-background:#24140b;
-color:white;
-border:none;
-padding:12px 25px;
-border-radius:30px;
-cursor:pointer;
-
-}
-
-
-
-.add-btn:hover{
-
-background:#d4a017;
-color:#222;
-
-}
-
-</style>
-
-
-
-<div class="menu-grid">
-
-
-<!-- Pizza -->
-
-<div class="food-card">
-
-<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38">
-
-<div class="food-info">
-
-<h3>🍕 Cheese Pizza</h3>
-
-<p>Loaded cheese pizza with fresh toppings</p>
-
-<div class="price">
-₹249
-</div>
-
-<button class="add-btn"
-onclick="addToCart('Cheese Pizza',249)">
-Add To Cart
-</button>
+<button onclick="scrollToCategory('pizza')">🍕 Pizza</button>
+<button onclick="scrollToCategory('burger')">🍔 Burger</button>
+<button onclick="scrollToCategory('colddrink')">🥤 Cold Drinks</button>
+<button onclick="scrollToCategory('sandwich')">🥪 Sandwich</button>
+<button onclick="scrollToCategory('pasta')">🍝 Pasta</button>
+<button onclick="scrollToCategory('fries')">🍟 Fries</button>
+<button onclick="scrollToCategory('coffee')">☕ Coffee</button>
+<button onclick="scrollToCategory('starters')">🍽️ Starters</button>
+<button onclick="scrollToCategory('dessert')">🍰 Desserts</button>
 
 </div>
 
+<!-- PIZZA -->
+
+<div class="menu-category" id="pizza">
+
+<h2 class="category-title">🍕 Pizza</h2>
+
+<div class="menu-list">
+
+<div class="menu-item">
+<span>Margherita Pizza</span><strong>₹160</strong>
+<button onclick="addToCart('Margherita Pizza',160)">Add</button>
 </div>
 
-
-
-<!-- Burger -->
-
-<div class="food-card">
-
-<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd">
-
-<div class="food-info">
-
-<h3>🍔 Classic Burger</h3>
-
-<p>Soft bun with crispy patty and sauce</p>
-
-<div class="price">
-₹179
+<div class="menu-item">
+<span>Veg Cheese Pizza</span><strong>₹180</strong>
+<button onclick="addToCart('Veg Cheese Pizza',180)">Add</button>
 </div>
 
-<button class="add-btn"
-onclick="addToCart('Classic Burger',179)">
-Add To Cart
-</button>
-
+<div class="menu-item">
+<span>Corn Cheese Pizza</span><strong>₹190</strong>
+<button onclick="addToCart('Corn Cheese Pizza',190)">Add</button>
 </div>
 
+<div class="menu-item">
+<span>Paneer Tikka Pizza</span><strong>₹220</strong>
+<button onclick="addToCart('Paneer Tikka Pizza',220)">Add</button>
 </div>
 
-
-
-
-<!-- Cappuccino -->
-
-<div class="food-card">
-
-<img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd">
-
-<div class="food-info">
-
-<h3>☕ Cappuccino</h3>
-
-<p>Premium coffee with creamy milk foam</p>
-
-<div class="price">
-₹129
+<div class="menu-item">
+<span>Farmhouse Pizza</span><strong>₹220</strong>
+<button onclick="addToCart('Farmhouse Pizza',220)">Add</button>
 </div>
 
-<button class="add-btn"
-onclick="addToCart('Cappuccino',129)">
-Add To Cart
-</button>
+<div class="menu-item">
+<span>Cheese Burst Pizza</span><strong>₹250</strong>
+<button onclick="addToCart('Cheese Burst Pizza',250)">Add</button>
+</div>
 
+<div class="menu-item">
+<span>Mexican Veg Pizza</span><strong>₹210</strong>
+<button onclick="addToCart('Mexican Veg Pizza',210)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Italian Pizza</span><strong>₹230</strong>
+<button onclick="addToCart('Italian Pizza',230)">Add</button>
 </div>
 
 </div>
-
-
-
-
-<!-- Chocolate Dessert -->
-
-<div class="food-card">
-
-<img src="https://images.unsplash.com/photo-1551024506-0bccd828d307">
-
-<div class="food-info">
-
-<h3>🍰 Chocolate Dessert</h3>
-
-<p>Delicious chocolate sweet dessert</p>
-
-<div class="price">
-₹149
 </div>
 
-<button class="add-btn"
-onclick="addToCart('Chocolate Dessert',149)">
-Add To Cart
-</button>
+<!-- BURGER -->
 
+<div class="menu-category" id="burger">
+
+<h2 class="category-title">🍔 Burger</h2>
+
+<div class="menu-list">
+
+<div class="menu-item">
+<span>Veg Burger</span><strong>₹90</strong>
+<button onclick="addToCart('Veg Burger',90)">Add</button>
 </div>
 
+<div class="menu-item">
+<span>Cheese Burger</span><strong>₹110</strong>
+<button onclick="addToCart('Cheese Burger',110)">Add</button>
 </div>
 
-
-
-
-<!-- Sandwich -->
-
-<div class="food-card">
-
-<img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af">
-
-<div class="food-info">
-
-<h3>🥪 Cheese Sandwich</h3>
-
-<p>Grilled sandwich with cheese filling</p>
-
-<div class="price">
-₹159
+<div class="menu-item">
+<span>Paneer Burger</span><strong>₹140</strong>
+<button onclick="addToCart('Paneer Burger',140)">Add</button>
 </div>
 
-<button class="add-btn"
-onclick="addToCart('Cheese Sandwich',159)">
-Add To Cart
-</button>
+<div class="menu-item">
+<span>Mexican Burger</span><strong>₹150</strong>
+<button onclick="addToCart('Mexican Burger',150)">Add</button>
+</div>
 
+<div class="menu-item">
+<span>Cheese Paneer Burger</span><strong>₹160</strong>
+<button onclick="addToCart('Cheese Paneer Burger',160)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Spicy Veg Burger</span><strong>₹120</strong>
+<button onclick="addToCart('Spicy Veg Burger',120)">Add</button>
 </div>
 
 </div>
-
-
-
-
-<!-- Cold Coffee -->
-
-<div class="food-card">
-
-<img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735">
-
-<div class="food-info">
-
-<h3>🥤 Cold Coffee</h3>
-
-<p>Chilled creamy cafe special coffee</p>
-
-<div class="price">
-₹119
 </div>
 
-<button class="add-btn"
-onclick="addToCart('Cold Coffee',119)">
-Add To Cart
-</button>
+<!-- COLD DRINKS -->
 
+<div class="menu-category" id="colddrink">
+
+<h2 class="category-title">🥤 Cold Drinks</h2>
+
+<div class="menu-list">
+
+<div class="menu-item">
+<span>Cold Coffee</span><strong>₹110</strong>
+<button onclick="addToCart('Cold Coffee',110)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Cold Coffee With Ice Cream</span><strong>₹140</strong>
+<button onclick="addToCart('Cold Coffee With Ice Cream',140)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Fresh Lime Soda</span><strong>₹80</strong>
+<button onclick="addToCart('Fresh Lime Soda',80)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Masala Lemonade</span><strong>₹90</strong>
+<button onclick="addToCart('Masala Lemonade',90)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Chocolate Shake</span><strong>₹140</strong>
+<button onclick="addToCart('Chocolate Shake',140)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Oreo Shake</span><strong>₹150</strong>
+<button onclick="addToCart('Oreo Shake',150)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Strawberry Shake</span><strong>₹150</strong>
+<button onclick="addToCart('Strawberry Shake',150)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Vanilla Shake</span><strong>₹130</strong>
+<button onclick="addToCart('Vanilla Shake',130)">Add</button>
 </div>
 
 </div>
-
-
-
 </div>
 
+<!-- SANDWICH -->
 
+<div class="menu-category" id="sandwich">
+
+<h2 class="category-title">🥪 Sandwich</h2>
+
+<div class="menu-list">
+
+<div class="menu-item">
+<span>Masala Sandwich</span><strong>₹99</strong>
+<button onclick="addToCart('Masala Sandwich',99)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Veg Grill Sandwich</span><strong>₹110</strong>
+<button onclick="addToCart('Veg Grill Sandwich',110)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Paneer Tikka Sandwich</span><strong>₹130</strong>
+<button onclick="addToCart('Paneer Tikka Sandwich',130)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Cheese Corn Sandwich</span><strong>₹130</strong>
+<button onclick="addToCart('Cheese Corn Sandwich',130)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Italian Sandwich</span><strong>₹180</strong>
+<button onclick="addToCart('Italian Sandwich',180)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Bombay Sandwich</span><strong>₹180</strong>
+<button onclick="addToCart('Bombay Sandwich',180)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Chocolate Sandwich</span><strong>₹150</strong>
+<button onclick="addToCart('Chocolate Sandwich',150)">Add</button>
+</div>
+
+</div>
+</div>
+<!-- PASTA -->
+
+<div class="menu-category" id="pasta">
+
+<h2 class="category-title">🍝 Pasta</h2>
+
+<div class="menu-list">
+
+<div class="menu-item">
+<span>White Sauce Pasta</span><strong>₹150</strong>
+<button onclick="addToCart('White Sauce Pasta',150)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Red Sauce Pasta</span><strong>₹150</strong>
+<button onclick="addToCart('Red Sauce Pasta',150)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Pink Sauce Pasta</span><strong>₹170</strong>
+<button onclick="addToCart('Pink Sauce Pasta',170)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Arrabbiata Pasta</span><strong>₹170</strong>
+<button onclick="addToCart('Arrabbiata Pasta',170)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Cheesy Pasta</span><strong>₹180</strong>
+<button onclick="addToCart('Cheesy Pasta',180)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Paneer Pasta</span><strong>₹190</strong>
+<button onclick="addToCart('Paneer Pasta',190)">Add</button>
+</div>
+
+</div>
+</div>
+
+<!-- FRIES -->
+
+<div class="menu-category" id="fries">
+
+<h2 class="category-title">🍟 Fries</h2>
+
+<div class="menu-list">
+
+<div class="menu-item">
+<span>French Fries</span><strong>₹70</strong>
+<button onclick="addToCart('French Fries',70)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Masala Fries</span><strong>₹90</strong>
+<button onclick="addToCart('Masala Fries',90)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Peri Peri Fries</span><strong>₹110</strong>
+<button onclick="addToCart('Peri Peri Fries',110)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Cheesy Peri Peri Fries</span><strong>₹130</strong>
+<button onclick="addToCart('Cheesy Peri Peri Fries',130)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Cheese Loaded Fries</span><strong>₹150</strong>
+<button onclick="addToCart('Cheese Loaded Fries',150)">Add</button>
+</div>
+
+</div>
+</div>
+
+<!-- COFFEE -->
+
+<div class="menu-category" id="coffee">
+
+<h2 class="category-title">☕ Coffee</h2>
+
+<div class="menu-list">
+
+<div class="menu-item">
+<span>Hot Coffee</span><strong>₹80</strong>
+<button onclick="addToCart('Hot Coffee',80)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Cappuccino</span><strong>₹120</strong>
+<button onclick="addToCart('Cappuccino',120)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Hot Chocolate</span><strong>₹130</strong>
+<button onclick="addToCart('Hot Chocolate',130)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Espresso</span><strong>₹90</strong>
+<button onclick="addToCart('Espresso',90)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Americano</span><strong>₹100</strong>
+<button onclick="addToCart('Americano',100)">Add</button>
+</div>
+
+</div>
+</div>
+
+<!-- STARTERS -->
+
+<div class="menu-category" id="starters">
+
+<h2 class="category-title">🍽️ Starters</h2>
+
+<div class="menu-list">
+
+<div class="menu-item">
+<span>Veg Nuggets</span><strong>₹110</strong>
+<button onclick="addToCart('Veg Nuggets',110)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Cheese Balls</span><strong>₹120</strong>
+<button onclick="addToCart('Cheese Balls',120)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Veg Spring Roll</span><strong>₹120</strong>
+<button onclick="addToCart('Veg Spring Roll',120)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Chilli Paneer</span><strong>₹160</strong>
+<button onclick="addToCart('Chilli Paneer',160)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Paneer Chilli Dry</span><strong>₹170</strong>
+<button onclick="addToCart('Paneer Chilli Dry',170)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Manchurian</span><strong>₹140</strong>
+<button onclick="addToCart('Manchurian',140)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Cheese Corn Balls</span><strong>₹140</strong>
+<button onclick="addToCart('Cheese Corn Balls',140)">Add</button>
+</div>
+
+</div>
+</div>
+
+<!-- DESSERT -->
+
+<div class="menu-category" id="dessert">
+
+<h2 class="category-title">🍰 Desserts</h2>
+
+<div class="menu-list">
+
+<div class="menu-item">
+<span>Ice Cream Scoop</span><strong>₹60</strong>
+<button onclick="addToCart('Ice Cream Scoop',60)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Brownie</span><strong>₹100</strong>
+<button onclick="addToCart('Brownie',100)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Brownie Sizzler</span><strong>₹150</strong>
+<button onclick="addToCart('Brownie Sizzler',150)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Chocolate Brownie</span><strong>₹130</strong>
+<button onclick="addToCart('Chocolate Brownie',130)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Chocolate Sundae</span><strong>₹140</strong>
+<button onclick="addToCart('Chocolate Sundae',140)">Add</button>
+</div>
+
+</div>
+</div>
+
+</div>
 </section>
 
+<!-- CART PAGE -->
 
+<section id="cart" class="page">
 
-<!-- CART SECTION -->
+<div class="section">
 
-<section id="cart">
-
-
-<h2 class="title">
-Your Cart
+<h2 class="section-title">
+Your <span>Cart</span>
 </h2>
-
-
-<style>
-
-.cart-box{
-
-max-width:900px;
-margin:auto;
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.12);
-
-}
-
-
-
-.cart-item{
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 0;
-border-bottom:1px solid #ddd;
-
-}
-
-
-
-.cart-item input{
-
-width:55px;
-padding:8px;
-text-align:center;
-
-}
-
-
-
-.remove-btn{
-
-background:#e53935;
-color:white;
-border:none;
-padding:8px 15px;
-border-radius:20px;
-cursor:pointer;
-
-}
-
-
-
-.total-box{
-
-text-align:right;
-font-size:25px;
-font-weight:bold;
-margin-top:20px;
-
-color:#24140b;
-
-}
-
-
-
-.checkout-box{
-
-margin-top:30px;
-
-}
-
-
-
-.checkout-box input,
-.checkout-box textarea,
-.checkout-box select{
-
-width:100%;
-padding:14px;
-margin:10px 0;
-border:1px solid #ddd;
-border-radius:10px;
-font-size:16px;
-
-}
-
-
-
-.order-btn{
-
-width:100%;
-padding:15px;
-background:#25D366;
-color:white;
-border:none;
-border-radius:30px;
-font-size:18px;
-cursor:pointer;
-
-}
-
-
-.order-btn:hover{
-
-background:#128C7E;
-
-}
-
-
-</style>
-
-
-
-
 
 <div class="cart-box">
 
+<div id="cartItems"></div>
 
-<div id="cartItems">
+<div class="cart-summary">
 
-<p style="text-align:center;">
-Your cart is empty
-</p>
+<div>
+Items:
+<span id="itemCount">0</span>
+</div>
+
+<div class="grand-total">
+Grand Total:
+₹<span id="cartTotal">0</span>
+</div>
 
 </div>
 
-
-
-<div class="total-box">
-
-Total : ₹<span id="cartTotal">
-0
-</span>
-
-</div>
-
-
-
-
-<div class="checkout-box">
-
-
-<h3>
-Customer Details
-</h3>
-
-
-<input type="text" id="customerName" placeholder="Customer Name" required>
-
-<input type="tel" id="customerPhone" placeholder="Customer Number" required>
-
-<input type="text" id="tableNumber" placeholder="Table Number / Parcel">
-
-<textarea id="customerAddress" placeholder="Delivery Address"></textarea>
-
-<button class="order-btn"
-onclick="generateBill()">
-
-Place Order
-
+<button class="checkout-btn"
+onclick="goCheckout()">
+Proceed to Checkout →
 </button>
 
+<button class="back-btn"
+onclick="showPage('menu')">
+← Continue Shopping
+</button>
 
 </div>
-
-
-
 </div>
-
-
 </section>
+<!-- CHECKOUT -->
 
+<section id="checkout" class="page">
 
+<div class="section">
 
+<h2 class="section-title">
+Checkout <span>Details</span>
+</h2>
 
+<div class="checkout-layout">
 
-<script>
+<div class="checkout-card">
 
+<h2>Customer Details</h2>
 
-let cart=[];
+<label>Customer Name</label>
 
+<input id="customerName"
+class="form-input"
+type="text"
+placeholder="Enter your name">
 
+<label>Customer Number</label>
 
-function addToCart(name,price){
+<input id="customerPhone"
+class="form-input"
+type="tel"
+maxlength="10"
+placeholder="10 digit mobile number">
 
+<label>Table Number</label>
 
-let item=cart.find(
-x=>x.name===name
-);
+<input id="tableNumber"
+class="form-input"
+type="text"
+placeholder="Enter table number">
 
+<label>Address</label>
 
+<textarea id="customerAddress"
+class="form-input"
+rows="4"
+placeholder="Enter address"></textarea>
 
-if(item){
+<label>Order Type</label>
 
-item.qty++;
+<select id="orderType" class="form-input">
 
-}
+<option value="Dine In">Dine In</option>
+<option value="Takeaway">Takeaway</option>
 
-else{
+</select>
 
+<button class="place-order-btn"
+onclick="placeOrder()">
 
-cart.push({
-
-name:name,
-
-price:price,
-
-qty:1
-
-});
-
-
-}
-
-
-
-updateCart();
-
-
-}
-
-
-
-
-function updateCart(){
-
-
-let html="";
-
-let total=0;
-
-let count=0;
-
-
-
-cart.forEach((item,index)=>{
-
-
-total += item.price * item.qty;
-
-count += item.qty;
-
-
-
-html += `
-
-<div class="cart-item">
-
-
-<div>
-
-<b>${item.name}</b>
-
-<br>
-
-₹${item.price}
-
-</div>
-
-
-
-<div>
-
-<input 
-type="number"
-min="1"
-value="${item.qty}"
-
-onchange="changeQty(${index},this.value)">
-
-</div>
-
-
-
-<button class="remove-btn"
-
-onclick="removeItem(${index})">
-
-Remove
+🟢 PLACE ORDER
 
 </button>
 
-
-
 </div>
 
-`;
+<div class="checkout-card">
 
+<h2>Order Summary</h2>
 
-
-});
-
-
-
-if(cart.length==0){
-
-html="<p style='text-align:center'>Your cart is empty</p>";
-
-}
-
-
-
-document.getElementById("cartItems").innerHTML=html;
-
-
-document.getElementById("cartTotal").innerHTML=total;
-
-
-document.getElementById("cartCount").innerHTML=count;
-
-
-
-}
-
-
-
-
-function changeQty(index,value){
-
-
-cart[index].qty=parseInt(value);
-
-
-updateCart();
-
-
-}
-
-
-
-
-
-function removeItem(index){
-
-
-cart.splice(index,1);
-
-
-updateCart();
-
-
-}
-
-
-
-
-</script>
-
-
-
-  
-  
-<!-- BILL SECTION -->
-
-<section id="billSection" style="display:none;">
-
-
-<h2 class="title">
-Your Bill
-</h2>
-
-
-<style>
-
-.bill-box{
-
-max-width:800px;
-margin:auto;
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.15);
-
-}
-
-
-.bill-header{
-
-text-align:center;
-border-bottom:2px dashed #333;
-padding-bottom:15px;
-
-}
-
-
-.bill-table{
-
-width:100%;
-border-collapse:collapse;
-margin-top:20px;
-
-}
-
-
-.bill-table th,
-.bill-table td{
-
-border:1px solid #ddd;
-padding:12px;
-text-align:center;
-
-}
-
-
-.bill-total{
-
-text-align:right;
-font-size:25px;
-font-weight:bold;
-margin-top:20px;
-
-}
-
-
-.bill-btn{
-
-padding:12px 25px;
-background:#24140b;
-color:white;
-border:none;
-border-radius:25px;
-cursor:pointer;
-margin:10px;
-
-}
-
-
-.bill-btn:hover{
-
-background:#d4a017;
-color:#222;
-
-}
-
-</style>
-
-
-
-
-<div class="bill-box">
-
-
-
-<div class="bill-header">
-
-<h2>
-19's Cafe
-</h2>
-
-<p>
-Premium Food Experience
-</p>
-
-</div>
-
-
-
-<p>
-<b>Bill No:</b>
-<span id="billNumber"></span>
-</p>
-
-
-
-<p>
-<b>Date:</b>
-<span id="billDate"></span>
-</p>
-
-
-
-<p>
-<b>Customer Name:</b>
-<span id="billCustomer"></span>
-</p>
-
-
+<div id="checkoutItems"></div>
 
 <hr>
 
+<div class="checkout-total">
+Total:
+₹<span id="checkoutTotal">0</span>
+</div>
 
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- BILL -->
+
+<section id="billPage" class="page">
+
+<div class="section">
+
+<h2 class="section-title">
+Order <span>Confirmed</span> 🎉
+</h2>
+
+<div class="bill-container" id="billContainer">
+
+<div class="bill-header">
+
+<h1>19's Cafe</h1>
+<p>Premium Food & Cafe</p>
+<p>Order Bill</p>
+
+</div>
+
+<div class="bill-info">
+
+<p>
+<strong>Bill No:</strong>
+<span id="billNo"></span>
+</p>
+
+<p>
+<strong>Date:</strong>
+<span id="billDate"></span>
+</p>
+
+<p>
+<strong>Customer:</strong>
+<span id="billCustomer"></span>
+</p>
+
+<p>
+<strong>Mobile:</strong>
+<span id="billPhone"></span>
+</p>
+
+<p>
+<strong>Table:</strong>
+<span id="billTable"></span>
+</p>
+
+<p>
+<strong>Address:</strong>
+<span id="billAddress"></span>
+</p>
+
+<p>
+<strong>Order Type:</strong>
+<span id="billOrderType"></span>
+</p>
+
+</div>
 
 <table class="bill-table">
-
 
 <thead>
 
 <tr>
-
-<th>
-Item
-</th>
-
-<th>
-Qty
-</th>
-
-<th>
-Price
-</th>
-
-<th>
-Total
-</th>
-
+<th>Item</th>
+<th>Qty</th>
+<th>Price</th>
+<th>Total</th>
 </tr>
-
 
 </thead>
 
-
-
-<tbody id="billItems">
-
-
-</tbody>
-
+<tbody id="billItems"></tbody>
 
 </table>
 
-
-
-
 <div class="bill-total">
-
-Grand Total : ₹<span id="billTotal">
-0
-</span>
-
+Grand Total:
+₹<span id="billTotal"></span>
 </div>
-  
 
-
+<div class="bill-footer">
+Thank you for visiting 19's Cafe ❤️
+</div>
 
 </div>
 
+<div class="bill-actions">
 
+<button class="download-btn"
+onclick="downloadBill()">
+⬇️ Download Bill
+</button>
 
+<button class="whatsapp-btn"
+onclick="sendWhatsApp()">
+💬 Send Order on WhatsApp
+</button>
+
+<button class="btn"
+onclick="showPage('home')">
+🏠 Back Home
+</button>
+
+</div>
+
+</div>
 </section>
+<!-- BOOK TABLE -->
 
+<section id="booking" class="page">
 
+<div class="section">
 
-
-
-<script>
-
-
-function generateBill(){
-
-if(cart.length==0){
-alert("Cart is empty");
-return;
-}
-
-let billHTML="";
-let total=0;
-
-
-cart.forEach(item=>{
-
-let itemTotal=item.price*item.qty;
-
-total += itemTotal;
-
-
-billHTML += `
-<tr>
-<td>${item.name}</td>
-<td>${item.qty}</td>
-<td>₹${item.price}</td>
-<td>₹${itemTotal}</td>
-</tr>
-`;
-
-});
-
-
-document.getElementById("billItems").innerHTML=billHTML;
-
-document.getElementById("billTotal").innerHTML=total;
-
-
-document.getElementById("billNumber").innerHTML =
-Math.floor(10000 + Math.random()*90000);
-
-
-document.getElementById("billDate").innerHTML =
-new Date().toLocaleString();
-
-
-document.getElementById("billCustomer").innerHTML =
-document.getElementById("customerName").value;
-
-
-document.getElementById("billSection").style.display="block";
-
-
-/* Download Bill Image */
-
-setTimeout(()=>{
-
-html2canvas(document.querySelector(".bill-box"))
-.then(canvas=>{
-
-let link=document.createElement("a");
-
-link.download="19s-Cafe-Bill.png";
-
-link.href=canvas.toDataURL();
-
-link.click();
-
-
-});
-
-},500);
-
-
-
-/* WhatsApp Message */
-
-setTimeout(()=>{
-
-sendWhatsApp();
-
-},1000);
-
-
-}
-
-
-  
-
-function sendWhatsApp(){
-
-let name = document.getElementById("customerName").value;
-let phone = document.getElementById("customerPhone").value;
-let table = document.getElementById("tableNumber").value;
-let address = document.getElementById("customerAddress").value;
-
-let total = document.getElementById("billTotal").innerText;
-
-let message = "🍽️ *19's Cafe - New Order*%0A%0A";
-
-message += "👤 *Customer:* " + name + "%0A";
-message += "📞 *Phone:* " + phone + "%0A";
-message += "🪑 *Table:* " + table + "%0A";
-message += "📍 *Address:* " + address + "%0A%0A";
-
-message += "🛒 *Order Items*%0A";
-
-cart.forEach(item=>{
-message += "• " + item.name + " x " + item.qty + " = ₹" + (item.price * item.qty) + "%0A";
-});
-
-message += "%0A💰 *Grand Total:* ₹" + total;
-
-window.open(
-"https://wa.me/919081155344?text=" + message,
-"_blank"
-);
-
-}
-  
-  
-  
-
-</script>
-  
-  
-  
-  
-  <!-- TABLE BOOKING -->
-
-<section id="booking">
-
-
-<h2 class="title">
-Book A Table
+<h2 class="section-title">
+Book Your <span>Table</span>
 </h2>
 
+<div class="booking-card">
 
-<style>
+<h2>🍽️ Table Reservation</h2>
 
-.booking-box{
+<input id="bookName"
+class="form-input"
+type="text"
+placeholder="Customer Name">
 
-max-width:700px;
-margin:auto;
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.12);
+<input id="bookPhone"
+class="form-input"
+type="tel"
+maxlength="10"
+placeholder="Mobile Number">
 
-}
+<input id="bookTable"
+class="form-input"
+type="number"
+placeholder="Table Number">
 
-
-.booking-box input,
-.booking-box textarea,
-.booking-box select{
-
-width:100%;
-padding:14px;
-margin:10px 0;
-border:1px solid #ddd;
-border-radius:10px;
-
-}
-
-
-.book-btn{
-
-width:100%;
-padding:15px;
-background:#24140b;
-color:white;
-border:none;
-border-radius:30px;
-font-size:17px;
-cursor:pointer;
-
-}
-
-
-.book-btn:hover{
-
-background:#d4a017;
-color:#222;
-
-}
-
-
-
-.gallery-grid{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-
-}
-
-
-
-.gallery-grid img{
-
-width:100%;
-height:230px;
-object-fit:cover;
-border-radius:20px;
-
-}
-
-
-
-
-.review-grid{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-
-}
-
-
-
-.review-card{
-
-background:white;
-padding:25px;
-border-radius:20px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-
-}
-
-
-
-.contact-box{
-
-text-align:center;
-
-}
-
-
-</style>
-
-
-
-
-
-<div class="booking-box">
-
-
-<input 
-id="tableName"
-placeholder="Your Name">
-
-
-
-<input
-id="tablePhone"
-placeholder="Phone Number">
-
-
-
-<input
-id="tableDate"
+<input id="bookDate"
+class="form-input"
 type="date">
 
-
-
-<input
-id="tableTime"
+<input id="bookTime"
+class="form-input"
 type="time">
 
+<select id="bookPersons" class="form-input">
 
-
-<select id="person">
-
-<option>
-2 Persons
-</option>
-
-<option>
-4 Persons
-</option>
-
-<option>
-6 Persons
-</option>
-
-<option>
-8 Persons
-</option>
+<option value="">Number of Guests</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+<option>6</option>
+<option>8</option>
+<option>10</option>
 
 </select>
 
+<textarea id="bookRequest"
+class="form-input"
+rows="4"
+placeholder="Special Request"></textarea>
 
-
-<textarea
-id="request"
-placeholder="Special Request">
-</textarea>
-
-
-
-
-<button class="book-btn"
+<button class="place-order-btn"
 onclick="bookTable()">
 
-Book Table
+📲 Book Table on WhatsApp
 
 </button>
 
-
-
 </div>
-
-
-
+</div>
 </section>
-
-
-
-
-
 
 
 <!-- GALLERY -->
 
+<section id="gallery" class="page">
 
-<section id="gallery">
+<div class="section">
 
-
-<h2 class="title">
-Cafe Gallery
+<h2 class="section-title">
+Cafe <span>Gallery</span>
 </h2>
-
-
 
 <div class="gallery-grid">
 
+<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Cafe">
 
-<img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b">
+<img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb" alt="Cafe">
 
+<img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24" alt="Cafe">
 
-<img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb">
+<img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f" alt="Cafe">
 
+<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085" alt="Cafe">
 
-<img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8">
-
-
-<img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f">
-
+<img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0" alt="Cafe">
 
 </div>
-
-
-
+</div>
 </section>
-
-
-
-
-
-
-
-<!-- REVIEWS -->
-
-
-<section>
-
-
-<h2 class="title">
-Customer Reviews
-</h2>
-
-
-
-<div class="review-grid">
-
-
-
-<div class="review-card">
-
-⭐⭐⭐⭐⭐
-
-<br><br>
-
-"Excellent food and amazing cafe atmosphere."
-
-</div>
-
-
-
-<div class="review-card">
-
-⭐⭐⭐⭐⭐
-
-<br><br>
-
-"Best place for coffee and friends."
-
-</div>
-
-
-
-<div class="review-card">
-
-⭐⭐⭐⭐⭐
-
-<br><br>
-
-"Great service and delicious dishes."
-
-</div>
-
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
 
 
 <!-- CONTACT -->
 
+<section id="contact" class="page">
 
-<section id="contact">
+<div class="section">
 
-
-<h2 class="title">
-Contact Us
+<h2 class="section-title">
+Contact <span>19's Cafe</span>
 </h2>
 
+<div class="contact-card">
 
+<div class="contact-item">
+<div>📞</div>
+<h3>Phone</h3>
+<p>+91 9081155344</p>
+</div>
 
-<div class="contact-box">
+<div class="contact-item">
+<div>💬</div>
+<h3>WhatsApp</h3>
+<p>Orders & Table Booking</p>
+</div>
 
-
-<h3>
-19's Cafe
-</h3>
-
-
-<p>
-📍 19's cafe, surendernager
-</p>
-
-
-<p>
-📞 +91 9081155344
-</p>
-
-
-<p>
-✉️ info@19scafe.com
-</p>
-
-
-<br>
-
-
-<iframe
-
-src="https://www.google.com/maps?q=C.U Shah commurce colleg surendernager&output=embed"
-
-width="100%"
-
-height="300"
-
-style="border:0;border-radius:15px;">
-
-</iframe>
-
-
+<div class="contact-item">
+<div>⏰</div>
+<h3>Opening Hours</h3>
+<p>Open Daily</p>
+</div>
 
 </div>
 
+<div class="map-box">
 
+<iframe
+src="https://www.google.com/maps?q=C.U. shah commerce College, Surendranagar &output=embed"
+loading="lazy">
+</iframe>
 
+</div>
+
+</div>
 </section>
 
 
-
-
-
-
-
-<script>
-
-
-function bookTable(){
-
-
-let msg=
-
-"*🍽️ 19's Cafe Table Booking*%0A%0A"+
-
-"*Name:* "+
-document.getElementById("tableName").value+
-
-"%0A*Phone:* "+
-document.getElementById("tablePhone").value+
-
-"%0A*Date:* "+
-document.getElementById("tableDate").value+
-
-"%0A*Time:* "+
-document.getElementById("tableTime").value+
-
-"%0AGuests: "+
-document.getElementById("person").value+
-
-"%0ARequest: "+
-document.getElementById("request").value;
-
-
-
-window.open(
-
-"https://wa.me/919081155344?text="+msg,
-
-"_blank"
-
-);
-
-
-}
-
-
-</script>
-
-
-  
-  <!-- FOOTER -->
-
-<style>
-
-footer{
-
-background:#24140b;
-color:white;
-text-align:center;
-padding:30px 10px;
-
-}
-
-
-footer h2{
-
-color:#d4a017;
-margin-bottom:10px;
-
-}
-
-
-
-.whatsapp-btn{
-
-position:fixed;
-right:25px;
-bottom:25px;
-background:#25D366;
-color:white;
-width:60px;
-height:60px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:30px;
-text-decoration:none;
-box-shadow:0 5px 20px rgba(0,0,0,.3);
-z-index:999;
-
-}
-
-
-
-.top-btn{
-
-position:fixed;
-left:25px;
-bottom:25px;
-background:#d4a017;
-color:#222;
-width:50px;
-height:50px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:25px;
-cursor:pointer;
-display:none;
-
-}
-
-
-
-.fade{
-
-animation:fadeIn 1s ease;
-
-}
-
-
-
-@keyframes fadeIn{
-
-from{
-
-opacity:0;
-transform:translateY(30px);
-
-}
-
-to{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-}
-
-
-</style>
-
-
-
-
+<a class="floating-whatsapp"
+href="https://wa.me/919081155344"
+target="_blank">
+💬
+</a>
 
 
 <footer>
 
-
-<h2>
-19's Cafe
-</h2>
-
+<h2>19's Cafe</h2>
 
 <p>
-Premium Food • Coffee • Luxury Experience
+Premium Food • Coffee • Great Experience
 </p>
-
-
-<br>
-
 
 <p>
 © 2026 19's Cafe. All Rights Reserved.
 </p>
 
-
 </footer>
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 
+<style>
+
+/* CATEGORY BUTTONS */
+
+.category-buttons{
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+    padding:10px 5px 25px;
+    margin-bottom:30px;
+    scrollbar-width:none;
+}
+
+.category-buttons::-webkit-scrollbar{
+    display:none;
+}
+
+.category-buttons button{
+    flex:0 0 auto;
+    border:1px solid #d4a017;
+    background:#fff;
+    color:#24140b;
+    padding:10px 17px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+.category-buttons button:hover{
+    background:#d4a017;
+}
 
 
-<!-- WHATSAPP BUTTON -->
+/* MENU */
+
+.menu-category{
+    max-width:1100px;
+    margin:0 auto 45px;
+    scroll-margin-top:90px;
+}
+
+.category-title{
+    text-align:center;
+    font-size:30px;
+    margin-bottom:18px;
+}
+
+.menu-list{
+    background:#fff;
+    border-radius:18px;
+    padding:8px 25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.menu-item{
+    display:grid;
+    grid-template-columns:1fr auto auto;
+    align-items:center;
+    gap:20px;
+    padding:16px 5px;
+    border-bottom:1px dashed #ccc;
+}
+
+.menu-item:last-child{
+    border-bottom:0;
+}
+
+.menu-item span{
+    font-weight:bold;
+}
+
+.menu-item strong{
+    color:#d4a017;
+    min-width:60px;
+    text-align:right;
+}
+
+.menu-item button{
+    background:#24140b;
+    color:#fff;
+    border:0;
+    padding:8px 18px;
+    border-radius:20px;
+    font-weight:bold;
+}
+
+.menu-item button:hover{
+    background:#d4a017;
+    color:#24140b;
+}
 
 
-<a class="whatsapp-btn"
+/* CART */
 
-href="https://wa.me/919081155344"
+.cart-box{
+    max-width:1000px;
+    margin:auto;
+    background:#fff;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
 
-target="_blank">
+.empty-cart{
+    text-align:center;
+    padding:40px;
+    color:#777;
+    font-size:18px;
+}
 
-💬
+.cart-row{
+    display:grid;
+    grid-template-columns:1fr auto auto auto;
+    gap:20px;
+    align-items:center;
+    padding:16px 0;
+    border-bottom:1px solid #eee;
+}
 
-</a>
+.quantity-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.quantity-box button{
+    width:30px;
+    height:30px;
+    border:0;
+    border-radius:50%;
+    background:#24140b;
+    color:#fff;
+}
+
+.delete-btn{
+    border:0;
+    background:#e53935;
+    color:#fff;
+    padding:7px 12px;
+    border-radius:15px;
+}
+
+.cart-summary{
+    margin-top:25px;
+    display:flex;
+    justify-content:space-between;
+    font-size:18px;
+}
+
+.grand-total{
+    font-size:25px;
+    font-weight:bold;
+}
+
+.checkout-btn{
+    width:100%;
+    margin-top:25px;
+    padding:15px;
+    border:0;
+    border-radius:30px;
+    background:#d4a017;
+    color:#17100c;
+    font-size:17px;
+    font-weight:bold;
+}
+
+.back-btn{
+    width:100%;
+    margin-top:10px;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:30px;
+    background:#fff;
+}
 
 
+/* CHECKOUT */
+
+.checkout-layout{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.checkout-card{
+    background:#fff;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.checkout-card h2{
+    margin-bottom:20px;
+}
+
+.checkout-card label{
+    display:block;
+    margin-top:12px;
+    font-weight:bold;
+}
+
+.form-input{
+    width:100%;
+    padding:13px;
+    margin-top:7px;
+    border:1px solid #ddd;
+    border-radius:9px;
+    outline:none;
+    font-size:15px;
+}
+
+.form-input:focus{
+    border-color:#d4a017;
+}
+
+.place-order-btn{
+    width:100%;
+    padding:16px;
+    margin-top:20px;
+    border:0;
+    border-radius:30px;
+    background:#25d366;
+    color:#fff;
+    font-size:17px;
+    font-weight:bold;
+}
+
+.checkout-item{
+    display:flex;
+    justify-content:space-between;
+    padding:12px 0;
+    border-bottom:1px solid #eee;
+}
+
+.checkout-total{
+    text-align:right;
+    font-size:25px;
+    font-weight:bold;
+    margin-top:20px;
+}
 
 
+/* BILL */
+
+.bill-container{
+    max-width:750px;
+    margin:auto;
+    background:#fff;
+    padding:35px;
+    border-radius:10px;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+.bill-header{
+    text-align:center;
+    border-bottom:2px solid #d4a017;
+    padding-bottom:20px;
+    margin-bottom:20px;
+}
+
+.bill-header h1{
+    font-size:34px;
+}
+
+.bill-info p{
+    margin:8px 0;
+}
+
+.bill-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:25px;
+}
+
+.bill-table th{
+    background:#f1ede7;
+}
+
+.bill-table th,
+.bill-table td{
+    padding:11px;
+    border-bottom:1px solid #ddd;
+    text-align:left;
+}
+
+.bill-table th:nth-child(n+2),
+.bill-table td:nth-child(n+2){
+    text-align:center;
+}
+
+.bill-total{
+    text-align:right;
+    font-size:25px;
+    font-weight:bold;
+    margin-top:25px;
+}
+
+.bill-footer{
+    text-align:center;
+    margin-top:30px;
+    padding-top:20px;
+    border-top:1px solid #ddd;
+}
+
+.bill-actions{
+    max-width:750px;
+    margin:20px auto;
+    display:grid;
+    gap:10px;
+}
+
+.download-btn,
+.whatsapp-btn{
+    width:100%;
+    padding:15px;
+    border:0;
+    border-radius:30px;
+    color:#fff;
+    font-size:17px;
+    font-weight:bold;
+}
+
+.download-btn{
+    background:#24140b;
+}
+
+.whatsapp-btn{
+    background:#25d366;
+}
 
 
-<!-- BACK TO TOP -->
+/* BOOKING */
+
+.booking-card{
+    max-width:700px;
+    margin:auto;
+    background:#fff;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.booking-card h2{
+    margin-bottom:20px;
+    text-align:center;
+}
 
 
-<div class="top-btn"
+/* CONTACT */
 
-id="topBtn"
+.contact-card{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
 
-onclick="goTop()">
+.contact-item{
+    background:#fff;
+    padding:30px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
 
-↑
+.contact-item div{
+    font-size:35px;
+    margin-bottom:10px;
+}
 
-</div>
+.contact-item p{
+    color:#666;
+    margin-top:8px;
+}
+
+.map-box{
+    max-width:1000px;
+    margin:30px auto 0;
+}
+
+.map-box iframe{
+    width:100%;
+    height:350px;
+    border:0;
+    border-radius:18px;
+}
 
 
+/* GALLERY */
+
+.gallery-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.gallery-grid img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:18px;
+}
 
 
+/* WHATSAPP */
 
+.floating-whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:60px;
+    height:60px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#25d366;
+    color:#fff;
+    border-radius:50%;
+    font-size:28px;
+    text-decoration:none;
+    z-index:9998;
+    box-shadow:0 5px 20px rgba(0,0,0,.3);
+}
+
+
+/* FOOTER */
+
+footer{
+    background:#120b08;
+    color:#fff;
+    text-align:center;
+    padding:35px;
+}
+
+footer h2{
+    color:#d4a017;
+    margin-bottom:8px;
+}
+
+footer p{
+    margin:7px;
+}
+
+#addedMessage{
+    position:fixed;
+    top:85px;
+    left:50%;
+    transform:translateX(-50%);
+    background:#25a244;
+    color:#fff;
+    padding:12px 22px;
+    border-radius:30px;
+    z-index:12000;
+    font-weight:bold;
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
+}
+
+@media(max-width:800px){
+
+    .menu-item{
+        grid-template-columns:1fr auto;
+    }
+
+    .menu-item button{
+        grid-column:1/-1;
+        width:100%;
+    }
+
+    .cart-row{
+        grid-template-columns:1fr auto;
+    }
+
+    .checkout-layout{
+        grid-template-columns:1fr;
+    }
+
+    .contact-card{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:500px){
+
+    .logo{
+        font-size:22px;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cart-summary{
+        display:block;
+        line-height:2;
+    }
+
+    .bill-container{
+        padding:18px;
+    }
+
+    .bill-table{
+        font-size:12px;
+    }
+}
+
+</style>
 <script>
 
+const WHATSAPP_NUMBER = "919081155344";
 
-window.onscroll=function(){
+let cart = [];
+
+let currentOrder = null;
 
 
-let btn=document.getElementById("topBtn");
+/* PAGE NAVIGATION */
+
+function showPage(pageId){
+
+    document.querySelectorAll(".page").forEach(page=>{
+        page.classList.remove("active");
+    });
+
+    const page=document.getElementById(pageId);
+
+    if(page){
+        page.classList.add("active");
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+    }
+
+    document.getElementById("sideMenu")
+    .classList.remove("active");
+
+    if(pageId==="cart"){
+        renderCart();
+    }
+
+    if(pageId==="checkout"){
+        renderCheckout();
+    }
+}
 
 
-if(document.documentElement.scrollTop>300){
+/* SIDE MENU */
 
-btn.style.display="flex";
+function toggleMenu(){
+
+    document.getElementById("sideMenu")
+    .classList.toggle("active");
 
 }
 
-else{
 
-btn.style.display="none";
+/* CATEGORY */
+
+function scrollToCategory(id){
+
+    const category=document.getElementById(id);
+
+    if(category){
+
+        category.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+
+    }
+}
+
+
+/* ADD TO CART
+   IMPORTANT:
+   DOES NOT OPEN CART
+*/
+
+function addToCart(name,price){
+
+    const existing=
+    cart.find(item=>item.name===name);
+
+    if(existing){
+
+        existing.qty++;
+
+    }else{
+
+        cart.push({
+            name:name,
+            price:price,
+            qty:1
+        });
+
+    }
+
+    updateCartCount();
+
+    /* STAY ON MENU */
+    showPage("menu");
+
+    showAddedMessage(name);
+}
+
+
+/* ADD MESSAGE */
+
+function showAddedMessage(name){
+
+    const old=
+    document.getElementById("addedMessage");
+
+    if(old){
+        old.remove();
+    }
+
+    const message=document.createElement("div");
+
+    message.id="addedMessage";
+
+    message.innerHTML=
+    "✓ "+name+" added to cart";
+
+    document.body.appendChild(message);
+
+    setTimeout(()=>{
+        message.remove();
+    },1800);
+}
+
+
+/* CART COUNT */
+
+function updateCartCount(){
+
+    let count=0;
+
+    cart.forEach(item=>{
+        count+=item.qty;
+    });
+
+    document.getElementById("cartCount")
+    .innerText=count;
+}
+
+
+/* TOTAL */
+
+function getCartTotal(){
+
+    return cart.reduce(
+        (total,item)=>
+        total+(item.price*item.qty),
+        0
+    );
 
 }
 
 
+/* RENDER CART */
+
+function renderCart(){
+
+    const box=
+    document.getElementById("cartItems");
+
+    if(cart.length===0){
+
+        box.innerHTML=`
+
+        <div class="empty-cart">
+
+        🛒 Your cart is empty.
+
+        <br><br>
+
+        <button class="btn"
+        onclick="showPage('menu')">
+
+        Browse Menu
+
+        </button>
+
+        </div>
+
+        `;
+
+    }else{
+
+        box.innerHTML="";
+
+        cart.forEach((item,index)=>{
+
+            const total=
+            item.price*item.qty;
+
+            box.innerHTML+=`
+
+            <div class="cart-row">
+
+            <div>
+
+            <strong>${item.name}</strong>
+
+            <br>
+
+            <small>₹${item.price} each</small>
+
+            </div>
+
+            <div class="quantity-box">
+
+            <button
+            onclick="changeQuantity(${index},-1)">
+            −
+            </button>
+
+            <strong>${item.qty}</strong>
+
+            <button
+            onclick="changeQuantity(${index},1)">
+            +
+            </button>
+
+            </div>
+
+            <strong>₹${total}</strong>
+
+            <button class="delete-btn"
+            onclick="removeItem(${index})">
+
+            Remove
+
+            </button>
+
+            </div>
+
+            `;
+
+        });
+
+    }
+
+    const count=
+    cart.reduce(
+        (sum,item)=>sum+item.qty,
+        0
+    );
+
+    document.getElementById("itemCount")
+    .innerText=count;
+
+    document.getElementById("cartTotal")
+    .innerText=getCartTotal();
+
+    updateCartCount();
 }
 
 
+/* QUANTITY */
+
+function changeQuantity(index,value){
+
+    cart[index].qty+=value;
+
+    if(cart[index].qty<=0){
+        cart.splice(index,1);
+    }
+
+    renderCart();
+}
 
 
-function goTop(){
+/* REMOVE */
+
+function removeItem(index){
+
+    cart.splice(index,1);
+
+    renderCart();
+}
 
 
-window.scrollTo({
+/* CHECKOUT */
 
-top:0,
+function goCheckout(){
 
-behavior:"smooth"
+    if(cart.length===0){
 
-});
+        alert(
+        "Your cart is empty. Please add some items."
+        );
 
+        showPage("menu");
+
+        return;
+    }
+
+    showPage("checkout");
+}
+
+
+/* CHECKOUT SUMMARY */
+
+function renderCheckout(){
+
+    const box=
+    document.getElementById("checkoutItems");
+
+    box.innerHTML="";
+
+    cart.forEach(item=>{
+
+        box.innerHTML+=`
+
+        <div class="checkout-item">
+
+        <span>
+        ${item.name} × ${item.qty}
+        </span>
+
+        <strong>
+        ₹${item.price*item.qty}
+        </strong>
+
+        </div>
+
+        `;
+
+    });
+
+    document.getElementById("checkoutTotal")
+    .innerText=getCartTotal();
+}
+
+
+/* CREATE BILL */
+
+function createBill(){
+
+    const name=
+    document.getElementById("customerName")
+    .value.trim();
+
+    const phone=
+    document.getElementById("customerPhone")
+    .value.trim();
+
+    const table=
+    document.getElementById("tableNumber")
+    .value.trim();
+
+    const address=
+    document.getElementById("customerAddress")
+    .value.trim();
+
+    const orderType=
+    document.getElementById("orderType")
+    .value;
+
+
+    if(!name){
+        alert("Please enter customer name.");
+        return false;
+    }
+
+    if(!phone){
+        alert("Please enter customer number.");
+        return false;
+    }
+
+    if(!/^[0-9]{10}$/.test(phone)){
+        alert("Please enter a valid 10 digit number.");
+        return false;
+    }
+
+    if(cart.length===0){
+        alert("Your cart is empty.");
+        return false;
+    }
+
+
+    currentOrder={
+
+        billNumber:
+        "19C-"+Date.now()
+        .toString()
+        .slice(-6),
+
+        date:
+        new Date()
+        .toLocaleString("en-IN"),
+
+        name:name,
+
+        phone:phone,
+
+        table:table||"N/A",
+
+        address:address||"N/A",
+
+        orderType:orderType,
+
+        items:
+        JSON.parse(
+            JSON.stringify(cart)
+        ),
+
+        total:getCartTotal()
+
+    };
+
+
+    document.getElementById("billNo")
+    .innerText=currentOrder.billNumber;
+
+    document.getElementById("billDate")
+    .innerText=currentOrder.date;
+
+    document.getElementById("billCustomer")
+    .innerText=currentOrder.name;
+
+    document.getElementById("billPhone")
+    .innerText=currentOrder.phone;
+
+    document.getElementById("billTable")
+    .innerText=currentOrder.table;
+
+    document.getElementById("billAddress")
+    .innerText=currentOrder.address;
+
+    document.getElementById("billOrderType")
+    .innerText=currentOrder.orderType;
+
+
+    const billItems=
+    document.getElementById("billItems");
+
+    billItems.innerHTML="";
+
+
+    currentOrder.items.forEach(item=>{
+
+        billItems.innerHTML+=`
+
+        <tr>
+
+        <td>${item.name}</td>
+
+        <td>${item.qty}</td>
+
+        <td>₹${item.price}</td>
+
+        <td>₹${item.price*item.qty}</td>
+
+        </tr>
+
+        `;
+
+    });
+
+
+    document.getElementById("billTotal")
+    .innerText=currentOrder.total;
+
+    return true;
+}
+
+
+/* PLACE ORDER */
+
+function placeOrder(){
+
+    if(!createBill()){
+        return;
+    }
+
+    showPage("billPage");
+
+    /*
+       Keep currentOrder available so
+       the customer can download/share
+       the bill after the order.
+    */
+
+    setTimeout(()=>{
+        downloadBill();
+    },500);
+
+    setTimeout(()=>{
+        sendWhatsApp();
+    },1500);
+
+    cart=[];
+
+    updateCartCount();
+}
+
+
+/* WHATSAPP ORDER */
+
+function sendWhatsApp(){
+
+    if(!currentOrder){
+        return;
+    }
+
+    let message=
+    "🍽️ *19's Cafe - NEW ORDER*%0A%0A";
+
+    message+=
+    "🧾 *Bill No:* "+
+    currentOrder.billNumber+
+    "%0A";
+
+    message+=
+    "👤 *Customer:* "+
+    currentOrder.name+
+    "%0A";
+
+    message+=
+    "📞 *Number:* "+
+    currentOrder.phone+
+    "%0A";
+
+    message+=
+    "🪑 *Table:* "+
+    currentOrder.table+
+    "%0A";
+
+    message+=
+    "📍 *Address:* "+
+    currentOrder.address+
+    "%0A";
+
+    message+=
+    "🍴 *Order Type:* "+
+    currentOrder.orderType+
+    "%0A%0A";
+
+    message+="*ITEMS*%0A";
+
+
+    currentOrder.items.forEach(item=>{
+
+        message+=
+        "• "+item.name+
+        " × "+item.qty+
+        " = ₹"+
+        (item.price*item.qty)+
+        "%0A";
+
+    });
+
+
+    message+=
+    "%0A💰 *GRAND TOTAL: ₹"+
+    currentOrder.total+
+    "*%0A%0A";
+
+    message+=
+    "Order received from 19's Cafe website.";
+
+
+    const url=
+    "https://wa.me/"+
+    WHATSAPP_NUMBER+
+    "?text="+message;
+
+
+    window.open(url,"_blank");
+}
+
+
+/* DOWNLOAD BILL */
+
+function downloadBill(){
+
+    if(!currentOrder){
+        alert("No bill available.");
+        return;
+    }
+
+    const bill=
+    document.getElementById("billContainer");
+
+    html2canvas(bill,{
+        backgroundColor:"#ffffff",
+        scale:2,
+        useCORS:true
+    }).then(canvas=>{
+
+        const link=
+        document.createElement("a");
+
+        link.download=
+        "19s-Cafe-Bill-"+
+        currentOrder.billNumber+
+        ".png";
+
+        link.href=
+        canvas.toDataURL("image/png");
+
+        link.click();
+
+    });
 
 }
 
 
+/* TABLE BOOKING */
+
+function bookTable(){
+
+    const name=
+    document.getElementById("bookName")
+    .value.trim();
+
+    const phone=
+    document.getElementById("bookPhone")
+    .value.trim();
+
+    const table=
+    document.getElementById("bookTable")
+    .value.trim();
+
+    const date=
+    document.getElementById("bookDate")
+    .value;
+
+    const time=
+    document.getElementById("bookTime")
+    .value;
+
+    const persons=
+    document.getElementById("bookPersons")
+    .value;
+
+    const request=
+    document.getElementById("bookRequest")
+    .value.trim();
+
+
+    if(
+        !name||
+        !phone||
+        !table||
+        !date||
+        !time||
+        !persons
+    ){
+
+        alert(
+        "Please fill all required booking details."
+        );
+
+        return;
+    }
+
+
+    if(!/^[0-9]{10}$/.test(phone)){
+
+        alert(
+        "Please enter a valid 10 digit number."
+        );
+
+        return;
+    }
+
+
+    let message=
+    "🍽️ *19's Cafe - TABLE BOOKING*%0A%0A";
+
+    message+=
+    "👤 *Customer:* "+
+    name+
+    "%0A";
+
+    message+=
+    "📞 *Number:* "+
+    phone+
+    "%0A";
+
+    message+=
+    "🪑 *Table:* "+
+    table+
+    "%0A";
+
+    message+=
+    "📅 *Date:* "+
+    date+
+    "%0A";
+
+    message+=
+    "🕐 *Time:* "+
+    time+
+    "%0A";
+
+    message+=
+    "👥 *Guests:* "+
+    persons+
+    "%0A";
+
+    message+=
+    "📝 *Special Request:* "+
+    (request||"None");
+
+
+    const url=
+    "https://wa.me/"+
+    WHATSAPP_NUMBER+
+    "?text="+
+    message;
+
+    window.open(url,"_blank");
+}
+
+
+/* INITIALIZE */
+
+updateCartCount();
 
 </script>
 
-
-
-
-
-
 </body>
-
 </html>
