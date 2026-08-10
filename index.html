@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>19's Cafe | Premium Cafe</title>
 
 <style>
+
+/* =========================
+   BASIC
+========================= */
+
 *{
     margin:0;
     padding:0;
@@ -23,7 +31,10 @@ body{
     color:#24140b;
 }
 
-button,input,textarea,select{
+button,
+input,
+textarea,
+select{
     font-family:inherit;
 }
 
@@ -31,7 +42,10 @@ button{
     cursor:pointer;
 }
 
-/* NAVBAR */
+
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar{
     position:fixed;
@@ -39,68 +53,116 @@ button{
     left:0;
     width:100%;
     height:70px;
+
     z-index:9999;
+
     background:#17100c;
+
     display:grid;
-    grid-template-columns:60px 1fr 60px;
+
+    grid-template-columns:
+    60px 1fr 60px;
+
     align-items:center;
+
     padding:0 18px;
-    box-shadow:0 3px 15px rgba(0,0,0,.35);
+
+    box-shadow:
+    0 3px 15px rgba(0,0,0,.35);
 }
 
 .logo{
     text-align:center;
+
     color:#d4a017;
+
     font-size:25px;
+
     font-weight:bold;
 }
 
 .menu-toggle{
     background:none;
+
     border:0;
-    color:#fff;
+
+    color:white;
+
     font-size:29px;
 }
 
 .cart-icon{
     position:relative;
-    color:#fff;
+
+    color:white;
+
     text-decoration:none;
+
     font-size:26px;
+
     text-align:right;
 }
 
 #cartCount{
+
     position:absolute;
+
     top:-9px;
+
     right:-5px;
+
     min-width:19px;
+
     height:19px;
+
     border-radius:50%;
+
     background:#d4a017;
+
     color:#17100c;
+
     font-size:11px;
+
     font-weight:bold;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 }
 
-/* SIDE MENU */
+
+/* =========================
+   SIDE MENU
+========================= */
 
 .side-menu{
+
     position:fixed;
+
     top:0;
+
     left:-290px;
+
     width:290px;
+
     height:100vh;
+
     background:#17100c;
+
     z-index:10000;
+
     padding:80px 25px 30px;
+
     display:flex;
+
     flex-direction:column;
+
     transition:.3s;
-    box-shadow:5px 0 25px rgba(0,0,0,.4);
+
+    box-shadow:
+    5px 0 25px rgba(0,0,0,.4);
 }
 
 .side-menu.active{
@@ -108,12 +170,19 @@ button{
 }
 
 .side-menu a{
-    color:#fff;
+
+    color:white;
+
     text-decoration:none;
+
     font-size:18px;
+
     font-weight:bold;
+
     padding:16px;
-    border-bottom:1px solid rgba(255,255,255,.1);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.1);
 }
 
 .side-menu a:hover{
@@ -121,20 +190,33 @@ button{
 }
 
 .close-menu{
+
     position:absolute;
+
     top:18px;
+
     right:20px;
+
     background:none;
+
     border:0;
-    color:#fff;
+
+    color:white;
+
     font-size:35px;
 }
 
-/* PAGES */
+
+/* =========================
+   PAGES
+========================= */
 
 .page{
+
     display:none;
+
     min-height:100vh;
+
     padding-top:70px;
 }
 
@@ -142,29 +224,51 @@ button{
     display:block;
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
-    min-height:calc(100vh - 70px);
+
+    min-height:
+    calc(100vh - 70px);
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
+
     text-align:center;
+
     padding:50px 20px;
 
     background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
-    url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4")
+
+    linear-gradient(
+        rgba(0,0,0,.65),
+        rgba(0,0,0,.65)
+    ),
+
+    url(
+    "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4"
+    )
+
     center/cover;
 }
 
 .hero-content{
-    color:#fff;
+
+    color:white;
+
     max-width:850px;
 }
 
 .hero h1{
+
     font-size:65px;
+
     margin-bottom:15px;
 }
 
@@ -173,34 +277,51 @@ button{
 }
 
 .hero p{
+
     font-size:20px;
+
     margin-bottom:30px;
 }
 
 .btn{
+
     display:inline-block;
+
     background:#d4a017;
+
     color:#17100c;
+
     padding:14px 30px;
+
     border-radius:30px;
+
     border:0;
+
     text-decoration:none;
+
     font-weight:bold;
 }
 
 .btn:hover{
-    background:#fff;
+    background:white;
 }
 
-/* COMMON */
+
+/* =========================
+   SECTIONS
+========================= */
 
 .section{
+
     padding:80px 6%;
 }
 
 .section-title{
+
     text-align:center;
+
     font-size:40px;
+
     margin-bottom:40px;
 }
 
@@ -208,65 +329,107 @@ button{
     color:#d4a017;
 }
 
-/* ABOUT */
+
+/* =========================
+   ABOUT
+========================= */
 
 .about{
+
     max-width:1100px;
+
     margin:auto;
+
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+    1fr 1fr;
+
     gap:40px;
+
     align-items:center;
 }
 
 .about img{
+
     width:100%;
+
     height:380px;
+
     object-fit:cover;
+
     border-radius:20px;
 }
 
 .about-text{
+
     line-height:1.8;
 }
 
 .about-text p{
+
     color:#555;
+
     margin-bottom:18px;
 }
 
-/* FEATURES */
+
+/* =========================
+   FEATURES
+========================= */
 
 .features{
+
     max-width:1100px;
+
     margin:50px auto 0;
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+    repeat(3,1fr);
+
     gap:20px;
 }
 
 .feature{
-    background:#fff;
+
+    background:white;
+
     padding:30px;
+
     border-radius:18px;
+
     text-align:center;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.08);
 }
 
 .feature-icon{
+
     font-size:40px;
+
     margin-bottom:12px;
 }
 
 .feature h3{
+
     margin-bottom:10px;
 }
 
 .feature p{
+
     color:#666;
 }
 
+
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media(max-width:800px){
+
     .hero h1{
         font-size:43px;
     }
@@ -290,624 +453,1299 @@ button{
     .section-title{
         font-size:32px;
     }
+
 }
+
 </style>
+
 </head>
 
 <body>
 
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
 <header class="navbar">
 
-<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+<button
+class="menu-toggle"
+onclick="toggleMenu()">
 
-<div class="logo">19's Cafe</div>
+☰
 
-<a href="#" class="cart-icon"
-onclick="showPage('cart');return false;">
+</button>
+
+
+<div class="logo">
+
+19's Cafe
+
+</div>
+
+
+<a
+href="#"
+class="cart-icon"
+onclick="
+showPage('cart');
+return false;
+">
+
 🛒
-<span id="cartCount">0</span>
+
+<span id="cartCount">
+0
+</span>
+
 </a>
 
 </header>
 
-<nav class="side-menu" id="sideMenu">
 
-<button class="close-menu" onclick="toggleMenu()">×</button>
+<!-- =========================
+     SIDE MENU
+========================= -->
 
-<a href="#" onclick="showPage('home');return false;">🏠 Home</a>
-<a href="#" onclick="showPage('menu');return false;">📋 Menu</a>
-<a href="#" onclick="showPage('cart');return false;">🛒 Cart</a>
-<a href="#" onclick="showPage('booking');return false;">🍽️ Book Table</a>
-<a href="#" onclick="showPage('gallery');return false;">📸 Gallery</a>
-<a href="#" onclick="showPage('contact');return false;">📞 Contact</a>
+<nav
+class="side-menu"
+id="sideMenu">
+
+<button
+class="close-menu"
+onclick="toggleMenu()">
+
+×
+
+</button>
+
+
+<a
+href="#"
+onclick="
+showPage('home');
+return false;
+">
+
+🏠 Home
+
+</a>
+
+
+<a
+href="#"
+onclick="
+showPage('menu');
+return false;
+">
+
+📋 Menu
+
+</a>
+
+
+<a
+href="#"
+onclick="
+showPage('cart');
+return false;
+">
+
+🛒 Cart
+
+</a>
+
+
+<a
+href="#"
+onclick="
+showPage('orders');
+return false;
+">
+
+🧾 My Orders
+
+</a>
+
+
+<a
+href="#"
+onclick="
+showPage('booking');
+return false;
+">
+
+🍽️ Book Table
+
+</a>
+
+
+<a
+href="#"
+onclick="
+showPage('gallery');
+return false;
+">
+
+📸 Gallery
+
+</a>
+
+
+<a
+href="#"
+onclick="
+showPage('contact');
+return false;
+">
+
+📞 Contact
+
+</a>
 
 </nav>
 
-<main id="home" class="page active">
+
+<!-- =========================
+     HOME
+========================= -->
+
+<main
+id="home"
+class="page active">
+
 
 <section class="hero">
 
 <div class="hero-content">
 
 <h1>
-Welcome to <span>19's Cafe</span>
+
+Welcome to
+<span>19's Cafe</span>
+
 </h1>
 
+
 <p>
+
 Premium Food • Fresh Coffee • Great Experience
+
 </p>
 
-<button class="btn" onclick="showPage('menu')">
+
+<button
+class="btn"
+onclick="showPage('menu')">
+
 View Menu
+
 </button>
 
 </div>
 
 </section>
 
+
 <section class="section">
 
+
 <h2 class="section-title">
-About <span>19's Cafe</span>
+
+About
+<span>19's Cafe</span>
+
 </h2>
 
+
 <div class="about">
+
 
 <img
 src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb"
 alt="19's Cafe">
 
+
 <div class="about-text">
 
 <p>
-Welcome to 19's Cafe — a modern place to enjoy
-delicious food, refreshing drinks and quality time
+
+Welcome to 19's Cafe —
+a modern place to enjoy
+delicious food, refreshing
+drinks and quality time
 with friends and family.
+
 </p>
+
 
 <p>
-Choose your favourite items, add them to your cart
-and place your order directly from our website.
+
+Choose your favourite items,
+add them to your cart and
+place your order directly
+from our website.
+
 </p>
 
-<button class="btn" onclick="showPage('menu')">
+
+<button
+class="btn"
+onclick="showPage('menu')">
+
 Order Now
+
 </button>
 
 </div>
+
 </div>
+
 
 <div class="features">
 
-<div class="feature">
-<div class="feature-icon">☕</div>
-<h3>Fresh Coffee</h3>
-<p>Freshly prepared beverages for every mood.</p>
-</div>
 
 <div class="feature">
-<div class="feature-icon">🍽️</div>
-<h3>Quality Food</h3>
-<p>Delicious food prepared with quality ingredients.</p>
+
+<div class="feature-icon">
+☕
 </div>
 
-<div class="feature">
-<div class="feature-icon">❤️</div>
-<h3>Great Experience</h3>
-<p>A comfortable place to enjoy with your loved ones.</p>
+<h3>
+Fresh Coffee
+</h3>
+
+<p>
+Freshly prepared beverages
+for every mood.
+</p>
+
 </div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+🍽️
+</div>
+
+<h3>
+Quality Food
+</h3>
+
+<p>
+Delicious food prepared with
+quality ingredients.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+❤️
+</div>
+
+<h3>
+Great Experience
+</h3>
+
+<p>
+A comfortable place to enjoy
+with your loved ones.
+</p>
+
+</div>
+
 
 </div>
 
 </section>
 
 </main>
-<!-- MENU PAGE -->
+<!-- =========================
+     MENU PAGE
+========================= -->
 
-<section id="menu" class="page">
+<section
+id="menu"
+class="page">
 
 <div class="section">
 
+
 <h2 class="section-title">
-Our <span>Menu</span>
+
+Our
+<span>Menu</span>
+
 </h2>
+
 
 <div class="category-buttons">
 
-<button onclick="scrollToCategory('pizza')">🍕 Pizza</button>
-<button onclick="scrollToCategory('burger')">🍔 Burger</button>
-<button onclick="scrollToCategory('colddrink')">🍻 Cold Drinks</button>
-<button onclick="scrollToCategory('sandwich')">🥪 Sandwich</button>
-<button onclick="scrollToCategory('pasta')">🍜 Pasta</button>
-<button onclick="scrollToCategory('fries')">🍟 Fries</button>
-<button onclick="scrollToCategory('coffee')">☕ Coffee</button>
-<button onclick="scrollToCategory('starters')">🍱 Starters</button>
-<button onclick="scrollToCategory('dessert')">🍰 Desserts</button>
+<button onclick="scrollToCategory('pizza')">
+🍕 Pizza
+</button>
+
+<button onclick="scrollToCategory('burger')">
+🍔 Burger
+</button>
+
+<button onclick="scrollToCategory('colddrink')">
+🥤 Cold Drinks
+</button>
+
+<button onclick="scrollToCategory('sandwich')">
+🥪 Sandwich
+</button>
+
+<button onclick="scrollToCategory('pasta')">
+🍝 Pasta
+</button>
+
+<button onclick="scrollToCategory('fries')">
+🍟 Fries
+</button>
+
+<button onclick="scrollToCategory('coffee')">
+☕ Coffee
+</button>
+
+<button onclick="scrollToCategory('starters')">
+🍽️ Starters
+</button>
+
+<button onclick="scrollToCategory('dessert')">
+🍰 Desserts
+</button>
 
 </div>
 
-<!-- PIZZA -->
 
-<div class="menu-category" id="pizza">
+<!-- =========================
+     PIZZA
+========================= -->
 
-<h2 class="category-title">🍕 Pizza</h2>
+<div
+class="menu-category"
+id="pizza">
 
-<div class="menu-list">
+<h2 class="category-title">
+🍕 Pizza
+</h2>
 
-<div class="menu-item">
-<span>Margherita Pizza</span><strong>₹160</strong>
-<button onclick="addToCart('Margherita Pizza',160)">Add</button>
-</div>
-
-<div class="menu-item">
-<span>Veg Cheese Pizza</span><strong>₹180</strong>
-<button onclick="addToCart('Veg Cheese Pizza',180)">Add</button>
-</div>
-
-<div class="menu-item">
-<span>Corn Cheese Pizza</span><strong>₹190</strong>
-<button onclick="addToCart('Corn Cheese Pizza',190)">Add</button>
-</div>
-
-<div class="menu-item">
-<span>Paneer Tikka Pizza</span><strong>₹220</strong>
-<button onclick="addToCart('Paneer Tikka Pizza',220)">Add</button>
-</div>
-
-<div class="menu-item">
-<span>Farmhouse Pizza</span><strong>₹220</strong>
-<button onclick="addToCart('Farmhouse Pizza',220)">Add</button>
-</div>
-
-<div class="menu-item">
-<span>Cheese Burst Pizza</span><strong>₹250</strong>
-<button onclick="addToCart('Cheese Burst Pizza',250)">Add</button>
-</div>
-
-<div class="menu-item">
-<span>Mexican Veg Pizza</span><strong>₹210</strong>
-<button onclick="addToCart('Mexican Veg Pizza',210)">Add</button>
-</div>
-
-<div class="menu-item">
-<span>Italian Pizza</span><strong>₹230</strong>
-<button onclick="addToCart('Italian Pizza',230)">Add</button>
-</div>
-
-</div>
-</div>
-
-<!-- BURGER -->
-
-<div class="menu-category" id="burger">
-
-<h2 class="category-title">🍔 Burger</h2>
 
 <div class="menu-list">
 
-<div class="menu-item">
-<span>Veg Burger</span><strong>₹90</strong>
-<button onclick="addToCart('Veg Burger',90)">Add</button>
-</div>
 
 <div class="menu-item">
-<span>Cheese Burger</span><strong>₹110</strong>
-<button onclick="addToCart('Cheese Burger',110)">Add</button>
+<span>Margherita Pizza</span>
+<strong>₹160</strong>
+<button
+onclick="addToCart('Margherita Pizza',160)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Paneer Burger</span><strong>₹140</strong>
-<button onclick="addToCart('Paneer Burger',140)">Add</button>
+<span>Veg Cheese Pizza</span>
+<strong>₹180</strong>
+<button
+onclick="addToCart('Veg Cheese Pizza',180)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Mexican Burger</span><strong>₹150</strong>
-<button onclick="addToCart('Mexican Burger',150)">Add</button>
+<span>Corn Cheese Pizza</span>
+<strong>₹190</strong>
+<button
+onclick="addToCart('Corn Cheese Pizza',190)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Cheese Paneer Burger</span><strong>₹160</strong>
-<button onclick="addToCart('Cheese Paneer Burger',160)">Add</button>
+<span>Paneer Tikka Pizza</span>
+<strong>₹220</strong>
+<button
+onclick="addToCart('Paneer Tikka Pizza',220)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Spicy Veg Burger</span><strong>₹120</strong>
-<button onclick="addToCart('Spicy Veg Burger',120)">Add</button>
+<span>Farmhouse Pizza</span>
+<strong>₹220</strong>
+<button
+onclick="addToCart('Farmhouse Pizza',220)">
+Add
+</button>
 </div>
 
+
+<div class="menu-item">
+<span>Cheese Burst Pizza</span>
+<strong>₹250</strong>
+<button
+onclick="addToCart('Cheese Burst Pizza',250)">
+Add
+</button>
+</div>
+
+
+<div class="menu-item">
+<span>Mexican Veg Pizza</span>
+<strong>₹210</strong>
+<button
+onclick="addToCart('Mexican Veg Pizza',210)">
+Add
+</button>
+</div>
+
+
+<div class="menu-item">
+<span>Italian Pizza</span>
+<strong>₹230</strong>
+<button
+onclick="addToCart('Italian Pizza',230)">
+Add
+</button>
+</div>
+
+
 </div>
 </div>
 
-<!-- COLD DRINKS -->
 
-<div class="menu-category" id="colddrink">
+<!-- =========================
+     BURGER
+========================= -->
 
-<h2 class="category-title">🍻 Cold Drinks</h2>
+<div
+class="menu-category"
+id="burger">
+
+<h2 class="category-title">
+🍔 Burger
+</h2>
+
 
 <div class="menu-list">
 
-<div class="menu-item">
-<span>Cold Coffee</span><strong>₹110</strong>
-<button onclick="addToCart('Cold Coffee',110)">Add</button>
-</div>
 
 <div class="menu-item">
-<span>Cold Coffee With Ice Cream</span><strong>₹140</strong>
-<button onclick="addToCart('Cold Coffee With Ice Cream',140)">Add</button>
+<span>Veg Burger</span>
+<strong>₹90</strong>
+<button
+onclick="addToCart('Veg Burger',90)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Fresh Lime Soda</span><strong>₹80</strong>
-<button onclick="addToCart('Fresh Lime Soda',80)">Add</button>
+<span>Cheese Burger</span>
+<strong>₹110</strong>
+<button
+onclick="addToCart('Cheese Burger',110)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Masala Lemonade</span><strong>₹90</strong>
-<button onclick="addToCart('Masala Lemonade',90)">Add</button>
+<span>Paneer Burger</span>
+<strong>₹140</strong>
+<button
+onclick="addToCart('Paneer Burger',140)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Chocolate Shake</span><strong>₹140</strong>
-<button onclick="addToCart('Chocolate Shake',140)">Add</button>
+<span>Mexican Burger</span>
+<strong>₹150</strong>
+<button
+onclick="addToCart('Mexican Burger',150)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Oreo Shake</span><strong>₹150</strong>
-<button onclick="addToCart('Oreo Shake',150)">Add</button>
+<span>Cheese Paneer Burger</span>
+<strong>₹160</strong>
+<button
+onclick="addToCart('Cheese Paneer Burger',160)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Strawberry Shake</span><strong>₹150</strong>
-<button onclick="addToCart('Strawberry Shake',150)">Add</button>
+<span>Spicy Veg Burger</span>
+<strong>₹120</strong>
+<button
+onclick="addToCart('Spicy Veg Burger',120)">
+Add
+</button>
 </div>
 
-<div class="menu-item">
-<span>Vanilla Shake</span><strong>₹130</strong>
-<button onclick="addToCart('Vanilla Shake',130)">Add</button>
-</div>
 
 </div>
 </div>
 
-<!-- SANDWICH -->
 
-<div class="menu-category" id="sandwich">
+<!-- =========================
+     COLD DRINKS
+========================= -->
 
-<h2 class="category-title">🥪 Sandwich</h2>
+<div
+class="menu-category"
+id="colddrink">
+
+<h2 class="category-title">
+🥤 Cold Drinks
+</h2>
+
 
 <div class="menu-list">
 
-<div class="menu-item">
-<span>Masala Sandwich</span><strong>₹99</strong>
-<button onclick="addToCart('Masala Sandwich',99)">Add</button>
-</div>
 
 <div class="menu-item">
-<span>Veg Grill Sandwich</span><strong>₹110</strong>
-<button onclick="addToCart('Veg Grill Sandwich',110)">Add</button>
+<span>Cold Coffee</span>
+<strong>₹110</strong>
+<button
+onclick="addToCart('Cold Coffee',110)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Paneer Tikka Sandwich</span><strong>₹130</strong>
-<button onclick="addToCart('Paneer Tikka Sandwich',130)">Add</button>
+<span>Cold Coffee With Ice Cream</span>
+<strong>₹140</strong>
+<button
+onclick="addToCart('Cold Coffee With Ice Cream',140)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Cheese Corn Sandwich</span><strong>₹130</strong>
-<button onclick="addToCart('Cheese Corn Sandwich',130)">Add</button>
+<span>Fresh Lime Soda</span>
+<strong>₹80</strong>
+<button
+onclick="addToCart('Fresh Lime Soda',80)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Italian Sandwich</span><strong>₹180</strong>
-<button onclick="addToCart('Italian Sandwich',180)">Add</button>
+<span>Masala Lemonade</span>
+<strong>₹90</strong>
+<button
+onclick="addToCart('Masala Lemonade',90)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Bombay Sandwich</span><strong>₹180</strong>
-<button onclick="addToCart('Bombay Sandwich',180)">Add</button>
+<span>Chocolate Shake</span>
+<strong>₹140</strong>
+<button
+onclick="addToCart('Chocolate Shake',140)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Chocolate Sandwich</span><strong>₹150</strong>
-<button onclick="addToCart('Chocolate Sandwich',150)">Add</button>
+<span>Oreo Shake</span>
+<strong>₹150</strong>
+<button
+onclick="addToCart('Oreo Shake',150)">
+Add
+</button>
 </div>
+
+
+<div class="menu-item">
+<span>Strawberry Shake</span>
+<strong>₹150</strong>
+<button
+onclick="addToCart('Strawberry Shake',150)">
+Add
+</button>
+</div>
+
+
+<div class="menu-item">
+<span>Vanilla Shake</span>
+<strong>₹130</strong>
+<button
+onclick="addToCart('Vanilla Shake',130)">
+Add
+</button>
+</div>
+
 
 </div>
 </div>
-<!-- PASTA -->
 
-<div class="menu-category" id="pasta">
 
-<h2 class="category-title">🍜 Pasta</h2>
+<!-- =========================
+     SANDWICH
+========================= -->
+
+<div
+class="menu-category"
+id="sandwich">
+
+<h2 class="category-title">
+🥪 Sandwich
+</h2>
+
 
 <div class="menu-list">
 
-<div class="menu-item">
-<span>White Sauce Pasta</span><strong>₹150</strong>
-<button onclick="addToCart('White Sauce Pasta',150)">Add</button>
-</div>
 
 <div class="menu-item">
-<span>Red Sauce Pasta</span><strong>₹150</strong>
-<button onclick="addToCart('Red Sauce Pasta',150)">Add</button>
+<span>Masala Sandwich</span>
+<strong>₹99</strong>
+<button
+onclick="addToCart('Masala Sandwich',99)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Pink Sauce Pasta</span><strong>₹170</strong>
-<button onclick="addToCart('Pink Sauce Pasta',170)">Add</button>
+<span>Veg Grill Sandwich</span>
+<strong>₹110</strong>
+<button
+onclick="addToCart('Veg Grill Sandwich',110)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Arrabbiata Pasta</span><strong>₹170</strong>
-<button onclick="addToCart('Arrabbiata Pasta',170)">Add</button>
+<span>Paneer Tikka Sandwich</span>
+<strong>₹130</strong>
+<button
+onclick="addToCart('Paneer Tikka Sandwich',130)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Cheesy Pasta</span><strong>₹180</strong>
-<button onclick="addToCart('Cheesy Pasta',180)">Add</button>
+<span>Cheese Corn Sandwich</span>
+<strong>₹130</strong>
+<button
+onclick="addToCart('Cheese Corn Sandwich',130)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Paneer Pasta</span><strong>₹190</strong>
-<button onclick="addToCart('Paneer Pasta',190)">Add</button>
+<span>Italian Sandwich</span>
+<strong>₹180</strong>
+<button
+onclick="addToCart('Italian Sandwich',180)">
+Add
+</button>
 </div>
 
+
+<div class="menu-item">
+<span>Bombay Sandwich</span>
+<strong>₹180</strong>
+<button
+onclick="addToCart('Bombay Sandwich',180)">
+Add
+</button>
+</div>
+
+
+<div class="menu-item">
+<span>Chocolate Sandwich</span>
+<strong>₹150</strong>
+<button
+onclick="addToCart('Chocolate Sandwich',150)">
+Add
+</button>
+</div>
+
+
 </div>
 </div>
+<!-- =========================
+     PASTA
+========================= -->
 
-<!-- FRIES -->
+<div
+class="menu-category"
+id="pasta">
 
-<div class="menu-category" id="fries">
+<h2 class="category-title">
+🍝 Pasta
+</h2>
 
-<h2 class="category-title">🍟 Fries</h2>
 
 <div class="menu-list">
 
-<div class="menu-item">
-<span>French Fries</span><strong>₹70</strong>
-<button onclick="addToCart('French Fries',70)">Add</button>
-</div>
 
 <div class="menu-item">
-<span>Masala Fries</span><strong>₹90</strong>
-<button onclick="addToCart('Masala Fries',90)">Add</button>
+<span>White Sauce Pasta</span>
+<strong>₹150</strong>
+<button
+onclick="addToCart('White Sauce Pasta',150)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Peri Peri Fries</span><strong>₹110</strong>
-<button onclick="addToCart('Peri Peri Fries',110)">Add</button>
+<span>Red Sauce Pasta</span>
+<strong>₹150</strong>
+<button
+onclick="addToCart('Red Sauce Pasta',150)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Cheesy Peri Peri Fries</span><strong>₹130</strong>
-<button onclick="addToCart('Cheesy Peri Peri Fries',130)">Add</button>
+<span>Pink Sauce Pasta</span>
+<strong>₹170</strong>
+<button
+onclick="addToCart('Pink Sauce Pasta',170)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Cheese Loaded Fries</span><strong>₹150</strong>
-<button onclick="addToCart('Cheese Loaded Fries',150)">Add</button>
+<span>Arrabbiata Pasta</span>
+<strong>₹170</strong>
+<button
+onclick="addToCart('Arrabbiata Pasta',170)">
+Add
+</button>
 </div>
 
+
+<div class="menu-item">
+<span>Cheesy Pasta</span>
+<strong>₹180</strong>
+<button
+onclick="addToCart('Cheesy Pasta',180)">
+Add
+</button>
+</div>
+
+
+<div class="menu-item">
+<span>Paneer Pasta</span>
+<strong>₹190</strong>
+<button
+onclick="addToCart('Paneer Pasta',190)">
+Add
+</button>
+</div>
+
+
 </div>
 </div>
 
-<!-- COFFEE -->
 
-<div class="menu-category" id="coffee">
+<!-- =========================
+     FRIES
+========================= -->
 
-<h2 class="category-title">☕ Coffee</h2>
+<div
+class="menu-category"
+id="fries">
+
+<h2 class="category-title">
+🍟 Fries
+</h2>
+
 
 <div class="menu-list">
 
-<div class="menu-item">
-<span>Hot Coffee</span><strong>₹80</strong>
-<button onclick="addToCart('Hot Coffee',80)">Add</button>
-</div>
 
 <div class="menu-item">
-<span>Cappuccino</span><strong>₹120</strong>
-<button onclick="addToCart('Cappuccino',120)">Add</button>
+<span>French Fries</span>
+<strong>₹70</strong>
+<button
+onclick="addToCart('French Fries',70)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Hot Chocolate</span><strong>₹130</strong>
-<button onclick="addToCart('Hot Chocolate',130)">Add</button>
+<span>Masala Fries</span>
+<strong>₹90</strong>
+<button
+onclick="addToCart('Masala Fries',90)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Espresso</span><strong>₹90</strong>
-<button onclick="addToCart('Espresso',90)">Add</button>
+<span>Peri Peri Fries</span>
+<strong>₹110</strong>
+<button
+onclick="addToCart('Peri Peri Fries',110)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Americano</span><strong>₹100</strong>
-<button onclick="addToCart('Americano',100)">Add</button>
+<span>Cheesy Peri Peri Fries</span>
+<strong>₹130</strong>
+<button
+onclick="addToCart('Cheesy Peri Peri Fries',130)">
+Add
+</button>
 </div>
 
+
+<div class="menu-item">
+<span>Cheese Loaded Fries</span>
+<strong>₹150</strong>
+<button
+onclick="addToCart('Cheese Loaded Fries',150)">
+Add
+</button>
+</div>
+
+
 </div>
 </div>
 
-<!-- STARTERS -->
 
-<div class="menu-category" id="starters">
+<!-- =========================
+     COFFEE
+========================= -->
 
-<h2 class="category-title">🍱 Starters</h2>
+<div
+class="menu-category"
+id="coffee">
+
+<h2 class="category-title">
+☕ Coffee
+</h2>
+
 
 <div class="menu-list">
 
-<div class="menu-item">
-<span>Veg Nuggets</span><strong>₹110</strong>
-<button onclick="addToCart('Veg Nuggets',110)">Add</button>
-</div>
 
 <div class="menu-item">
-<span>Cheese Balls</span><strong>₹120</strong>
-<button onclick="addToCart('Cheese Balls',120)">Add</button>
+<span>Hot Coffee</span>
+<strong>₹80</strong>
+<button
+onclick="addToCart('Hot Coffee',80)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Veg Spring Roll</span><strong>₹120</strong>
-<button onclick="addToCart('Veg Spring Roll',120)">Add</button>
+<span>Cappuccino</span>
+<strong>₹120</strong>
+<button
+onclick="addToCart('Cappuccino',120)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Chilli Paneer</span><strong>₹160</strong>
-<button onclick="addToCart('Chilli Paneer',160)">Add</button>
+<span>Hot Chocolate</span>
+<strong>₹130</strong>
+<button
+onclick="addToCart('Hot Chocolate',130)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Paneer Chilli Dry</span><strong>₹170</strong>
-<button onclick="addToCart('Paneer Chilli Dry',170)">Add</button>
+<span>Espresso</span>
+<strong>₹90</strong>
+<button
+onclick="addToCart('Espresso',90)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Manchurian</span><strong>₹140</strong>
-<button onclick="addToCart('Manchurian',140)">Add</button>
+<span>Americano</span>
+<strong>₹100</strong>
+<button
+onclick="addToCart('Americano',100)">
+Add
+</button>
 </div>
 
-<div class="menu-item">
-<span>Cheese Corn Balls</span><strong>₹140</strong>
-<button onclick="addToCart('Cheese Corn Balls',140)">Add</button>
-</div>
 
 </div>
 </div>
 
-<!-- DESSERT -->
 
-<div class="menu-category" id="dessert">
+<!-- =========================
+     STARTERS
+========================= -->
 
-<h2 class="category-title">🍰 Desserts</h2>
+<div
+class="menu-category"
+id="starters">
+
+<h2 class="category-title">
+🍽️ Starters
+</h2>
+
 
 <div class="menu-list">
 
-<div class="menu-item">
-<span>Ice Cream Scoop</span><strong>₹60</strong>
-<button onclick="addToCart('Ice Cream Scoop',60)">Add</button>
-</div>
 
 <div class="menu-item">
-<span>Brownie</span><strong>₹100</strong>
-<button onclick="addToCart('Brownie',100)">Add</button>
+<span>Veg Nuggets</span>
+<strong>₹110</strong>
+<button
+onclick="addToCart('Veg Nuggets',110)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Brownie Sizzler</span><strong>₹150</strong>
-<button onclick="addToCart('Brownie Sizzler',150)">Add</button>
+<span>Cheese Balls</span>
+<strong>₹120</strong>
+<button
+onclick="addToCart('Cheese Balls',120)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Chocolate Brownie</span><strong>₹130</strong>
-<button onclick="addToCart('Chocolate Brownie',130)">Add</button>
+<span>Veg Spring Roll</span>
+<strong>₹120</strong>
+<button
+onclick="addToCart('Veg Spring Roll',120)">
+Add
+</button>
 </div>
+
 
 <div class="menu-item">
-<span>Chocolate Sundae</span><strong>₹140</strong>
-<button onclick="addToCart('Chocolate Sundae',140)">Add</button>
+<span>Chilli Paneer</span>
+<strong>₹160</strong>
+<button
+onclick="addToCart('Chilli Paneer',160)">
+Add
+</button>
 </div>
+
+
+<div class="menu-item">
+<span>Paneer Chilli Dry</span>
+<strong>₹170</strong>
+<button
+onclick="addToCart('Paneer Chilli Dry',170)">
+Add
+</button>
+</div>
+
+
+<div class="menu-item">
+<span>Manchurian</span>
+<strong>₹140</strong>
+<button
+onclick="addToCart('Manchurian',140)">
+Add
+</button>
+</div>
+
+
+<div class="menu-item">
+<span>Cheese Corn Balls</span>
+<strong>₹140</strong>
+<button
+onclick="addToCart('Cheese Corn Balls',140)">
+Add
+</button>
+</div>
+
 
 </div>
 </div>
+
+
+<!-- =========================
+     DESSERTS
+========================= -->
+
+<div
+class="menu-category"
+id="dessert">
+
+<h2 class="category-title">
+🍰 Desserts
+</h2>
+
+
+<div class="menu-list">
+
+
+<div class="menu-item">
+<span>Ice Cream Scoop</span>
+<strong>₹60</strong>
+<button
+onclick="addToCart('Ice Cream Scoop',60)">
+Add
+</button>
+</div>
+
+
+<div class="menu-item">
+<span>Brownie</span>
+<strong>₹100</strong>
+<button
+onclick="addToCart('Brownie',100)">
+Add
+</button>
+</div>
+
+
+<div class="menu-item">
+<span>Brownie Sizzler</span>
+<strong>₹150</strong>
+<button
+onclick="addToCart('Brownie Sizzler',150)">
+Add
+</button>
+</div>
+
+
+<div class="menu-item">
+<span>Chocolate Brownie</span>
+<strong>₹130</strong>
+<button
+onclick="addToCart('Chocolate Brownie',130)">
+Add
+</button>
+</div>
+
+
+<div class="menu-item">
+<span>Chocolate Sundae</span>
+<strong>₹140</strong>
+<button
+onclick="addToCart('Chocolate Sundae',140)">
+Add
+</button>
+</div>
+
+
+</div>
+</div>
+
 
 </div>
 </section>
 
-<!-- CART PAGE -->
 
-<section id="cart" class="page">
+<!-- =========================
+     CART
+========================= -->
+
+<section
+id="cart"
+class="page">
 
 <div class="section">
 
+
 <h2 class="section-title">
-Your <span>Cart</span>
+
+Your
+<span>Cart</span>
+
 </h2>
+
 
 <div class="cart-box">
 
+
 <div id="cartItems"></div>
+
 
 <div class="cart-summary">
 
 <div>
+
 Items:
-<span id="itemCount">0</span>
+<span id="itemCount">
+0
+</span>
+
 </div>
+
 
 <div class="grand-total">
-Grand Total:
-₹<span id="cartTotal">0</span>
-</div>
+
+Current Cart:
+₹<span id="cartTotal">
+0
+</span>
 
 </div>
 
-<button class="checkout-btn"
+</div>
+
+
+<button
+class="checkout-btn"
 onclick="goCheckout()">
+
 Proceed to Checkout →
+
 </button>
 
-<button class="back-btn"
+
+<button
+class="back-btn"
 onclick="showPage('menu')">
+
 ← Continue Shopping
+
 </button>
 
 </div>
-</div>
-</section>
-<!-- CHECKOUT -->
 
-<section id="checkout" class="page">
+</div>
+
+</section>
+
+
+<!-- =========================
+     CHECKOUT
+========================= -->
+
+<section
+id="checkout"
+class="page">
 
 <div class="section">
 
+
 <h2 class="section-title">
-Checkout <span>Details</span>
+
+Checkout
+<span>Details</span>
+
 </h2>
+
 
 <div class="checkout-layout">
 
+
 <div class="checkout-card">
 
-<h2>Customer Details</h2>
 
-<label>Customer Name</label>
+<h2>
+Customer Details
+</h2>
 
-<input id="customerName"
+
+<label>
+Customer Name
+</label>
+
+<input
+id="customerName"
 class="form-input"
 type="text"
 placeholder="Enter your name">
 
-<label>Customer Number</label>
 
-<input id="customerPhone"
+<label>
+Customer Number
+</label>
+
+<input
+id="customerPhone"
 class="form-input"
 type="tel"
 maxlength="10"
 placeholder="10 digit mobile number">
 
-<label>Table Number</label>
 
-<input id="tableNumber"
+<label>
+Table Number
+</label>
+
+<input
+id="tableNumber"
 class="form-input"
 type="text"
 placeholder="Enter table number">
 
-<label>Address</label>
 
-<textarea id="customerAddress"
+<label>
+Address
+</label>
+
+<textarea
+id="customerAddress"
 class="form-input"
 rows="4"
 placeholder="Enter address"></textarea>
 
-<label>Order Type</label>
 
-<select id="orderType" class="form-input">
+<label>
+Order Type
+</label>
 
-<option value="Dine In">Dine In</option>
-<option value="Takeaway">Takeaway</option>
+<select
+id="orderType"
+class="form-input">
+
+<option value="Dine In">
+Dine In
+</option>
+
+<option value="Takeaway">
+Takeaway
+</option>
 
 </select>
 
-<button class="place-order-btn"
+
+<button
+class="place-order-btn"
 onclick="placeOrder()">
 
 🟢 PLACE ORDER
@@ -916,45 +1754,95 @@ onclick="placeOrder()">
 
 </div>
 
+
 <div class="checkout-card">
 
-<h2>Order Summary</h2>
 
-<div id="checkoutItems"></div>
+<h2>
+Current Order
+</h2>
+
+
+<div
+id="checkoutItems">
+</div>
+
 
 <hr>
 
+
 <div class="checkout-total">
-Total:
-₹<span id="checkoutTotal">0</span>
+
+Current Order:
+₹<span id="checkoutTotal">
+0
+</span>
+
 </div>
+
+
+<div
+id="previousCheckout"
+class="previous-box">
+</div>
+
 
 </div>
 
 </div>
+
 </div>
+
 </section>
+<!-- =========================
+     BILL
+========================= -->
 
-
-<!-- BILL -->
-
-<section id="billPage" class="page">
+<section
+id="billPage"
+class="page">
 
 <div class="section">
 
+
 <h2 class="section-title">
-Order <span>Confirmed</span> 🎉
+
+Order
+<span>Confirmed</span>
+🎉
+
 </h2>
 
-<div class="bill-container" id="billContainer">
+
+<div
+class="bill-container"
+id="billContainer">
+
 
 <div class="bill-header">
 
-<h1>19's Cafe</h1>
-<p>Premium Food & Cafe</p>
-<p>Order Bill</p>
+<h1>
+19's Cafe
+</h1>
+
+<p>
+Premium Food & Cafe
+</p>
+
+<p>
+Order Bill
+</p>
 
 </div>
+
+
+<div class="order-badge"
+id="orderBadge">
+
+ORDER #1
+
+</div>
+
 
 <div class="bill-info">
 
@@ -963,30 +1851,36 @@ Order <span>Confirmed</span> 🎉
 <span id="billNo"></span>
 </p>
 
+
 <p>
 <strong>Date:</strong>
 <span id="billDate"></span>
 </p>
+
 
 <p>
 <strong>Customer:</strong>
 <span id="billCustomer"></span>
 </p>
 
+
 <p>
 <strong>Mobile:</strong>
 <span id="billPhone"></span>
 </p>
+
 
 <p>
 <strong>Table:</strong>
 <span id="billTable"></span>
 </p>
 
+
 <p>
 <strong>Address:</strong>
 <span id="billAddress"></span>
 </p>
+
 
 <p>
 <strong>Order Type:</strong>
@@ -995,96 +1889,237 @@ Order <span>Confirmed</span> 🎉
 
 </div>
 
-<table class="bill-table">
+
+<h3 class="bill-section-title">
+
+This Order
+
+</h3>
+
+
+<table
+class="bill-table">
 
 <thead>
 
 <tr>
-<th>Item</th>
-<th>Qty</th>
-<th>Price</th>
-<th>Total</th>
+
+<th>
+Item
+</th>
+
+<th>
+Qty
+</th>
+
+<th>
+Price
+</th>
+
+<th>
+Total
+</th>
+
 </tr>
 
 </thead>
 
-<tbody id="billItems"></tbody>
+
+<tbody
+id="billItems">
+</tbody>
 
 </table>
 
+
 <div class="bill-total">
-Grand Total:
+
+This Order:
 ₹<span id="billTotal"></span>
+
 </div>
+
+
+<div
+id="previousOrdersBill">
+
+</div>
+
+
+<div
+class="today-total-box">
+
+Today's Combined Total:
+₹<span id="combinedTodayTotal">
+0
+</span>
+
+</div>
+
 
 <div class="bill-footer">
-Thank you for visiting 19's Cafe ❤️
+
+Thank you for visiting
+19's Cafe ❤️
+
 </div>
 
 </div>
+
 
 <div class="bill-actions">
 
-<button class="download-btn"
+
+<button
+class="download-btn"
 onclick="downloadBill()">
+
 ⬇️ Download Bill
+
 </button>
 
-<button class="whatsapp-btn"
+
+<button
+class="whatsapp-btn"
 onclick="sendWhatsApp()">
+
 💬 Send Order on WhatsApp
+
 </button>
 
-<button class="btn"
+
+<button
+class="new-order-btn"
+onclick="startAnotherOrder()">
+
+➕ Place Another Order
+
+</button>
+
+
+<button
+class="btn"
+onclick="showPage('orders')">
+
+🧾 View Today's Orders
+
+</button>
+
+
+<button
+class="btn"
 onclick="showPage('home')">
+
 🏠 Back Home
+
 </button>
 
 </div>
 
 </div>
-</section>
-<!-- BOOK TABLE -->
 
-<section id="booking" class="page">
+</section>
+
+
+<!-- =========================
+     ORDERS HISTORY
+========================= -->
+
+<section
+id="orders"
+class="page">
 
 <div class="section">
 
+
 <h2 class="section-title">
-Book Your <span>Table</span>
+
+Today's
+<span>Orders</span>
+
 </h2>
+
+
+<div
+id="ordersHistory"
+class="orders-history">
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     BOOK TABLE
+========================= -->
+
+<section
+id="booking"
+class="page">
+
+<div class="section">
+
+
+<h2 class="section-title">
+
+Book Your
+<span>Table</span>
+
+</h2>
+
 
 <div class="booking-card">
 
-<h2>🍽️ Table Reservation</h2>
 
-<input id="bookName"
+<h2>
+🍽️ Table Reservation
+</h2>
+
+
+<input
+id="bookName"
 class="form-input"
 type="text"
 placeholder="Customer Name">
 
-<input id="bookPhone"
+
+<input
+id="bookPhone"
 class="form-input"
 type="tel"
 maxlength="10"
 placeholder="Mobile Number">
 
-<input id="bookTable"
+
+<input
+id="bookTable"
 class="form-input"
 type="number"
 placeholder="Table Number">
 
-<input id="bookDate"
+
+<input
+id="bookDate"
 class="form-input"
 type="date">
 
-<input id="bookTime"
+
+<input
+id="bookTime"
 class="form-input"
 type="time">
 
-<select id="bookPersons" class="form-input">
 
-<option value="">Number of Guests</option>
+<select
+id="bookPersons"
+class="form-input">
+
+<option value="">
+Number of Guests
+</option>
+
 <option>1</option>
 <option>2</option>
 <option>3</option>
@@ -1096,12 +2131,17 @@ type="time">
 
 </select>
 
-<textarea id="bookRequest"
+
+<textarea
+id="bookRequest"
 class="form-input"
 rows="4"
-placeholder="Special Request"></textarea>
+placeholder="Special Request">
+</textarea>
 
-<button class="place-order-btn"
+
+<button
+class="place-order-btn"
 onclick="bookTable()">
 
 📲 Book Table on WhatsApp
@@ -1109,94 +2149,168 @@ onclick="bookTable()">
 </button>
 
 </div>
+
 </div>
+
 </section>
 
 
-<!-- GALLERY -->
+<!-- =========================
+     GALLERY
+========================= -->
 
-<section id="gallery" class="page">
+<section
+id="gallery"
+class="page">
 
 <div class="section">
 
+
 <h2 class="section-title">
-Cafe <span>Gallery</span>
+
+Cafe
+<span>Gallery</span>
+
 </h2>
+
 
 <div class="gallery-grid">
 
-<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Cafe">
 
-<img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb" alt="Cafe">
+<img
+src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4"
+alt="Cafe">
 
-<img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24" alt="Cafe">
 
-<img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f" alt="Cafe">
+<img
+src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb"
+alt="Cafe">
 
-<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085" alt="Cafe">
 
-<img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0" alt="Cafe">
+<img
+src="https://images.unsplash.com/photo-1554118811-1e0d58224f24"
+alt="Cafe">
+
+
+<img
+src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f"
+alt="Cafe">
+
+
+<img
+src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085"
+alt="Cafe">
+
+
+<img
+src="https://images.unsplash.com/photo-1445116572660-236099ec97a0"
+alt="Cafe">
 
 </div>
+
 </div>
+
 </section>
 
 
-<!-- CONTACT -->
+<!-- =========================
+     CONTACT
+========================= -->
 
-<section id="contact" class="page">
+<section
+id="contact"
+class="page">
 
 <div class="section">
 
+
 <h2 class="section-title">
-Contact <span>19's Cafe</span>
+
+Contact
+<span>19's Cafe</span>
+
 </h2>
+
 
 <div class="contact-card">
 
+
 <div class="contact-item">
+
 <div>📞</div>
-<h3>Phone</h3>
-<p>+91 9081155344</p>
+
+<h3>
+Phone
+</h3>
+
+<p>
++91 9081155344
+</p>
+
 </div>
 
+
 <div class="contact-item">
+
 <div>💬</div>
-<h3>WhatsApp</h3>
-<p>Orders & Table Booking</p>
+
+<h3>
+WhatsApp
+</h3>
+
+<p>
+Orders & Table Booking
+</p>
+
 </div>
+
 
 <div class="contact-item">
+
 <div>⏰</div>
-<h3>Opening Hours</h3>
-<p>Open Daily</p>
+
+<h3>
+Opening Hours
+</h3>
+
+<p>
+Open Daily
+</p>
+
 </div>
 
 </div>
+
 
 <div class="map-box">
 
 <iframe
-src="https://www.google.com/maps?q=C.U. shah commerce College, Surendranagar &output=embed"
+src="https://www.google.com/maps=C.U. shah commerce College, Surendranagar &output=embed"
 loading="lazy">
 </iframe>
 
 </div>
 
 </div>
+
 </section>
 
 
-<a class="floating-whatsapp"
+<a
+class="floating-whatsapp"
 href="https://wa.me/919081155344"
 target="_blank">
+
 💬
+
 </a>
 
 
 <footer>
 
-<h2>19's Cafe</h2>
+<h2>
+19's Cafe
+</h2>
 
 <p>
 Premium Food • Coffee • Great Experience
@@ -1209,19 +2323,29 @@ Premium Food • Coffee • Great Experience
 </footer>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js">
+</script>
 
 
 <style>
 
-/* CATEGORY BUTTONS */
+/* =========================
+   MENU
+========================= */
 
 .category-buttons{
+
     display:flex;
+
     gap:10px;
+
     overflow-x:auto;
+
     padding:10px 5px 25px;
+
     margin-bottom:30px;
+
     scrollbar-width:none;
 }
 
@@ -1230,48 +2354,76 @@ Premium Food • Coffee • Great Experience
 }
 
 .category-buttons button{
+
     flex:0 0 auto;
+
     border:1px solid #d4a017;
-    background:#fff;
+
+    background:white;
+
     color:#24140b;
+
     padding:10px 17px;
+
     border-radius:25px;
+
     font-weight:bold;
 }
 
 .category-buttons button:hover{
+
     background:#d4a017;
 }
 
 
-/* MENU */
+/* MENU ITEMS */
 
 .menu-category{
+
     max-width:1100px;
-    margin:0 auto 45px;
+
+    margin:
+    0 auto 45px;
+
     scroll-margin-top:90px;
 }
 
 .category-title{
+
     text-align:center;
+
     font-size:30px;
+
     margin-bottom:18px;
 }
 
 .menu-list{
-    background:#fff;
+
+    background:white;
+
     border-radius:18px;
+
     padding:8px 25px;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.08);
 }
 
 .menu-item{
+
     display:grid;
-    grid-template-columns:1fr auto auto;
+
+    grid-template-columns:
+    1fr auto auto;
+
     align-items:center;
+
     gap:20px;
+
     padding:16px 5px;
-    border-bottom:1px dashed #ccc;
+
+    border-bottom:
+    1px dashed #ccc;
 }
 
 .menu-item:last-child{
@@ -1283,125 +2435,205 @@ Premium Food • Coffee • Great Experience
 }
 
 .menu-item strong{
+
     color:#d4a017;
+
     min-width:60px;
+
     text-align:right;
 }
 
 .menu-item button{
+
     background:#24140b;
-    color:#fff;
+
+    color:white;
+
     border:0;
+
     padding:8px 18px;
+
     border-radius:20px;
+
     font-weight:bold;
 }
 
 .menu-item button:hover{
+
     background:#d4a017;
+
     color:#24140b;
 }
 
 
-/* CART */
+/* =========================
+   CART
+========================= */
 
 .cart-box{
+
     max-width:1000px;
+
     margin:auto;
-    background:#fff;
+
+    background:white;
+
     padding:30px;
+
     border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.1);
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.1);
 }
 
 .empty-cart{
+
     text-align:center;
+
     padding:40px;
+
     color:#777;
+
     font-size:18px;
 }
 
 .cart-row{
+
     display:grid;
-    grid-template-columns:1fr auto auto auto;
+
+    grid-template-columns:
+    1fr auto auto auto;
+
     gap:20px;
+
     align-items:center;
+
     padding:16px 0;
-    border-bottom:1px solid #eee;
+
+    border-bottom:
+    1px solid #eee;
 }
 
 .quantity-box{
+
     display:flex;
+
     align-items:center;
+
     gap:10px;
 }
 
 .quantity-box button{
+
     width:30px;
+
     height:30px;
+
     border:0;
+
     border-radius:50%;
+
     background:#24140b;
-    color:#fff;
+
+    color:white;
 }
 
 .delete-btn{
+
     border:0;
+
     background:#e53935;
-    color:#fff;
+
+    color:white;
+
     padding:7px 12px;
+
     border-radius:15px;
 }
 
 .cart-summary{
+
     margin-top:25px;
+
     display:flex;
+
     justify-content:space-between;
+
     font-size:18px;
 }
 
 .grand-total{
+
     font-size:25px;
+
     font-weight:bold;
 }
 
 .checkout-btn{
+
     width:100%;
+
     margin-top:25px;
+
     padding:15px;
+
     border:0;
+
     border-radius:30px;
+
     background:#d4a017;
+
     color:#17100c;
+
     font-size:17px;
+
     font-weight:bold;
 }
 
 .back-btn{
+
     width:100%;
+
     margin-top:10px;
+
     padding:12px;
+
     border:1px solid #ddd;
+
     border-radius:30px;
-    background:#fff;
+
+    background:white;
 }
 
 
-/* CHECKOUT */
+/* =========================
+   CHECKOUT
+========================= */
 
 .checkout-layout{
+
     max-width:1100px;
+
     margin:auto;
+
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+    1fr 1fr;
+
     gap:25px;
 }
 
 .checkout-card{
-    background:#fff;
+
+    background:white;
+
     padding:30px;
+
     border-radius:20px;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.08);
 }
 
 .checkout-card h2{
@@ -1409,18 +2641,28 @@ Premium Food • Coffee • Great Experience
 }
 
 .checkout-card label{
+
     display:block;
+
     margin-top:12px;
+
     font-weight:bold;
 }
 
 .form-input{
+
     width:100%;
+
     padding:13px;
+
     margin-top:7px;
+
     border:1px solid #ddd;
+
     border-radius:9px;
+
     outline:none;
+
     font-size:15px;
 }
 
@@ -1429,47 +2671,92 @@ Premium Food • Coffee • Great Experience
 }
 
 .place-order-btn{
+
     width:100%;
+
     padding:16px;
+
     margin-top:20px;
+
     border:0;
+
     border-radius:30px;
+
     background:#25d366;
-    color:#fff;
+
+    color:white;
+
     font-size:17px;
+
     font-weight:bold;
 }
 
 .checkout-item{
+
     display:flex;
+
     justify-content:space-between;
+
     padding:12px 0;
-    border-bottom:1px solid #eee;
+
+    border-bottom:
+    1px solid #eee;
 }
 
 .checkout-total{
+
     text-align:right;
+
     font-size:25px;
+
     font-weight:bold;
+
     margin-top:20px;
 }
 
+.previous-box{
 
-/* BILL */
+    margin-top:20px;
+
+    padding:15px;
+
+    background:#f7f2e8;
+
+    border-radius:12px;
+
+    font-size:14px;
+}
+
+
+/* =========================
+   BILL
+========================= */
 
 .bill-container{
+
     max-width:750px;
+
     margin:auto;
-    background:#fff;
+
+    background:white;
+
     padding:35px;
+
     border-radius:10px;
-    box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.12);
 }
 
 .bill-header{
+
     text-align:center;
-    border-bottom:2px solid #d4a017;
+
+    border-bottom:
+    2px solid #d4a017;
+
     padding-bottom:20px;
+
     margin-bottom:20px;
 }
 
@@ -1477,61 +2764,131 @@ Premium Food • Coffee • Great Experience
     font-size:34px;
 }
 
+.order-badge{
+
+    text-align:center;
+
+    background:#24140b;
+
+    color:white;
+
+    padding:10px;
+
+    border-radius:20px;
+
+    margin-bottom:20px;
+
+    font-weight:bold;
+}
+
 .bill-info p{
     margin:8px 0;
 }
 
-.bill-table{
-    width:100%;
-    border-collapse:collapse;
+.bill-section-title{
+
     margin-top:25px;
+
+    margin-bottom:10px;
+
+    border-bottom:
+    1px solid #ddd;
+
+    padding-bottom:8px;
+}
+
+.bill-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:15px;
 }
 
 .bill-table th{
+
     background:#f1ede7;
 }
 
 .bill-table th,
 .bill-table td{
+
     padding:11px;
-    border-bottom:1px solid #ddd;
+
+    border-bottom:
+    1px solid #ddd;
+
     text-align:left;
 }
 
-.bill-table th:nth-child(n+2),
-.bill-table td:nth-child(n+2){
-    text-align:center;
+.bill-total{
+
+    text-align:right;
+
+    font-size:25px;
+
+    font-weight:bold;
+
+    margin-top:20px;
 }
 
-.bill-total{
-    text-align:right;
-    font-size:25px;
+.today-total-box{
+
+    margin-top:20px;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    background:#fff2c7;
+
+    text-align:center;
+
+    font-size:21px;
+
     font-weight:bold;
-    margin-top:25px;
 }
 
 .bill-footer{
+
     text-align:center;
+
     margin-top:30px;
+
     padding-top:20px;
-    border-top:1px solid #ddd;
+
+    border-top:
+    1px solid #ddd;
 }
 
 .bill-actions{
+
     max-width:750px;
+
     margin:20px auto;
+
     display:grid;
+
     gap:10px;
 }
 
 .download-btn,
-.whatsapp-btn{
+.whatsapp-btn,
+.new-order-btn{
+
     width:100%;
+
     padding:15px;
+
     border:0;
+
     border-radius:30px;
-    color:#fff;
+
+    color:white;
+
     font-size:17px;
+
     font-weight:bold;
 }
 
@@ -1543,115 +2900,264 @@ Premium Food • Coffee • Great Experience
     background:#25d366;
 }
 
+.new-order-btn{
+    background:#d4a017;
+    color:#17100c;
+}
 
-/* BOOKING */
+
+/* =========================
+   ORDERS
+========================= */
+
+.orders-history{
+
+    max-width:900px;
+
+    margin:auto;
+}
+
+.order-history-card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    margin-bottom:20px;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.08);
+}
+
+.order-history-card h3{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:15px;
+}
+
+.history-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:8px 0;
+
+    border-bottom:
+    1px solid #eee;
+}
+
+.history-total{
+
+    text-align:right;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    margin-top:15px;
+}
+
+.no-orders{
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    color:#777;
+}
+
+
+/* =========================
+   BOOKING
+========================= */
 
 .booking-card{
+
     max-width:700px;
+
     margin:auto;
-    background:#fff;
+
+    background:white;
+
     padding:30px;
+
     border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.1);
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.1);
 }
 
 .booking-card h2{
+
     margin-bottom:20px;
+
     text-align:center;
 }
 
 
-/* CONTACT */
+/* =========================
+   CONTACT
+========================= */
 
 .contact-card{
+
     max-width:1000px;
+
     margin:auto;
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+    repeat(3,1fr);
+
     gap:20px;
 }
 
 .contact-item{
-    background:#fff;
+
+    background:white;
+
     padding:30px;
+
     border-radius:18px;
+
     text-align:center;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.08);
 }
 
 .contact-item div{
+
     font-size:35px;
+
     margin-bottom:10px;
 }
 
 .contact-item p{
+
     color:#666;
+
     margin-top:8px;
 }
 
 .map-box{
+
     max-width:1000px;
+
     margin:30px auto 0;
 }
 
 .map-box iframe{
+
     width:100%;
+
     height:350px;
+
     border:0;
+
     border-radius:18px;
 }
 
 
-/* GALLERY */
+/* =========================
+   GALLERY
+========================= */
 
 .gallery-grid{
+
     max-width:1100px;
+
     margin:auto;
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+    repeat(3,1fr);
+
     gap:18px;
 }
 
 .gallery-grid img{
+
     width:100%;
+
     height:250px;
+
     object-fit:cover;
+
     border-radius:18px;
 }
 
 
-/* WHATSAPP */
+/* =========================
+   WHATSAPP
+========================= */
 
 .floating-whatsapp{
+
     position:fixed;
+
     right:20px;
+
     bottom:20px;
+
     width:60px;
+
     height:60px;
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
+
     background:#25d366;
-    color:#fff;
+
+    color:white;
+
     border-radius:50%;
+
     font-size:28px;
+
     text-decoration:none;
+
     z-index:9998;
-    box-shadow:0 5px 20px rgba(0,0,0,.3);
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.3);
 }
 
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
+
     background:#120b08;
-    color:#fff;
+
+    color:white;
+
     text-align:center;
+
     padding:35px;
 }
 
 footer h2{
+
     color:#d4a017;
+
     margin-bottom:8px;
 }
 
@@ -1659,46 +3165,80 @@ footer p{
     margin:7px;
 }
 
+
+/* =========================
+   ADDED MESSAGE
+========================= */
+
 #addedMessage{
+
     position:fixed;
+
     top:85px;
+
     left:50%;
+
     transform:translateX(-50%);
+
     background:#25a244;
-    color:#fff;
+
+    color:white;
+
     padding:12px 22px;
+
     border-radius:30px;
+
     z-index:12000;
+
     font-weight:bold;
-    box-shadow:0 5px 20px rgba(0,0,0,.25);
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.25);
 }
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:800px){
 
     .menu-item{
-        grid-template-columns:1fr auto;
+
+        grid-template-columns:
+        1fr auto;
     }
 
     .menu-item button{
-        grid-column:1/-1;
+
+        grid-column:
+        1/-1;
+
         width:100%;
     }
 
     .cart-row{
-        grid-template-columns:1fr auto;
+
+        grid-template-columns:
+        1fr auto;
     }
 
     .checkout-layout{
+
         grid-template-columns:1fr;
     }
 
     .contact-card{
+
         grid-template-columns:1fr;
     }
 
     .gallery-grid{
-        grid-template-columns:1fr 1fr;
+
+        grid-template-columns:
+        1fr 1fr;
     }
+
 }
 
 @media(max-width:500px){
@@ -1723,86 +3263,274 @@ footer p{
     .bill-table{
         font-size:12px;
     }
+
 }
 
 </style>
 <script>
 
-const WHATSAPP_NUMBER = "919081155344";
+/* ==========================================
+   19's CAFE MULTI-ORDER SYSTEM
+========================================== */
+
+const WHATSAPP_NUMBER =
+"919081155344";
+
+const STORAGE_CART =
+"19sCafe_Cart";
+
+const STORAGE_ORDERS =
+"19sCafe_TodayOrders";
+
+const STORAGE_DATE =
+"19sCafe_OrderDate";
+
 
 let cart = [];
+
+let orders = [];
 
 let currentOrder = null;
 
 
-/* PAGE NAVIGATION */
+/* ==========================================
+   DATE KEY
+========================================== */
+
+function getTodayKey(){
+
+    const d = new Date();
+
+    return d.getFullYear()
+    + "-"
+    + String(d.getMonth()+1).padStart(2,"0")
+    + "-"
+    + String(d.getDate()).padStart(2,"0");
+
+}
+
+
+/* ==========================================
+   LOAD SAVED DATA
+========================================== */
+
+function loadSavedData(){
+
+    const today =
+    getTodayKey();
+
+    const savedDate =
+    localStorage.getItem(STORAGE_DATE);
+
+
+    /* NEW DAY */
+
+    if(savedDate !== today){
+
+        localStorage.removeItem(
+            STORAGE_CART
+        );
+
+        localStorage.removeItem(
+            STORAGE_ORDERS
+        );
+
+        localStorage.setItem(
+            STORAGE_DATE,
+            today
+        );
+
+        cart=[];
+
+        orders=[];
+
+    }else{
+
+        try{
+
+            cart =
+            JSON.parse(
+                localStorage.getItem(
+                    STORAGE_CART
+                )
+            ) || [];
+
+        }catch(e){
+
+            cart=[];
+
+        }
+
+
+        try{
+
+            orders =
+            JSON.parse(
+                localStorage.getItem(
+                    STORAGE_ORDERS
+                )
+            ) || [];
+
+        }catch(e){
+
+            orders=[];
+
+        }
+
+    }
+
+
+    updateCartCount();
+
+}
+
+
+/* ==========================================
+   SAVE CART
+========================================== */
+
+function saveCart(){
+
+    localStorage.setItem(
+        STORAGE_CART,
+        JSON.stringify(cart)
+    );
+
+}
+
+
+/* ==========================================
+   SAVE ORDERS
+========================================== */
+
+function saveOrders(){
+
+    localStorage.setItem(
+        STORAGE_ORDERS,
+        JSON.stringify(orders)
+    );
+
+    localStorage.setItem(
+        STORAGE_DATE,
+        getTodayKey()
+    );
+
+}
+
+
+/* ==========================================
+   PAGE NAVIGATION
+========================================== */
 
 function showPage(pageId){
 
-    document.querySelectorAll(".page").forEach(page=>{
-        page.classList.remove("active");
+    document
+    .querySelectorAll(".page")
+    .forEach(page=>{
+
+        page.classList.remove(
+            "active"
+        );
+
     });
 
-    const page=document.getElementById(pageId);
+
+    const page =
+    document.getElementById(pageId);
+
 
     if(page){
-        page.classList.add("active");
+
+        page.classList.add(
+            "active"
+        );
 
         window.scrollTo({
             top:0,
             behavior:"smooth"
         });
+
     }
 
-    document.getElementById("sideMenu")
+
+    document
+    .getElementById("sideMenu")
     .classList.remove("active");
 
+
     if(pageId==="cart"){
+
         renderCart();
+
     }
 
+
     if(pageId==="checkout"){
+
         renderCheckout();
+
     }
+
+
+    if(pageId==="orders"){
+
+        renderOrderHistory();
+
+    }
+
 }
 
 
-/* SIDE MENU */
+/* ==========================================
+   SIDE MENU
+========================================== */
 
 function toggleMenu(){
 
-    document.getElementById("sideMenu")
-    .classList.toggle("active");
+    document
+    .getElementById("sideMenu")
+    .classList
+    .toggle("active");
 
 }
 
 
-/* CATEGORY */
+/* ==========================================
+   CATEGORY
+========================================== */
 
 function scrollToCategory(id){
 
-    const category=document.getElementById(id);
+    const category =
+    document.getElementById(id);
+
 
     if(category){
 
         category.scrollIntoView({
+
             behavior:"smooth",
+
             block:"start"
+
         });
 
     }
+
 }
 
 
-/* ADD TO CART
-   IMPORTANT:
-   DOES NOT OPEN CART
-*/
+/* ==========================================
+   ADD TO CART
+========================================== */
 
 function addToCart(name,price){
 
-    const existing=
-    cart.find(item=>item.name===name);
+    const existing =
+    cart.find(
+        item=>item.name===name
+    );
+
 
     if(existing){
 
@@ -1811,82 +3539,154 @@ function addToCart(name,price){
     }else{
 
         cart.push({
+
             name:name,
+
             price:price,
+
             qty:1
+
         });
 
     }
 
+
+    saveCart();
+
     updateCartCount();
 
-    /* STAY ON MENU */
+
+    /* IMPORTANT:
+       STAY ON MENU */
+
     showPage("menu");
 
+
     showAddedMessage(name);
+
 }
 
 
-/* ADD MESSAGE */
+/* ==========================================
+   ADDED MESSAGE
+========================================== */
 
 function showAddedMessage(name){
 
-    const old=
-    document.getElementById("addedMessage");
+    const old =
+    document.getElementById(
+        "addedMessage"
+    );
+
 
     if(old){
         old.remove();
     }
 
-    const message=document.createElement("div");
 
-    message.id="addedMessage";
+    const message =
+    document.createElement(
+        "div"
+    );
 
-    message.innerHTML=
-    "✓ "+name+" added to cart";
 
-    document.body.appendChild(message);
+    message.id =
+    "addedMessage";
+
+
+    message.innerHTML =
+    "✓ "
+    + name
+    + " added to cart";
+
+
+    document.body.appendChild(
+        message
+    );
+
 
     setTimeout(()=>{
+
         message.remove();
+
     },1800);
+
 }
 
 
-/* CART COUNT */
+/* ==========================================
+   CART COUNT
+========================================== */
 
 function updateCartCount(){
 
     let count=0;
 
+
     cart.forEach(item=>{
-        count+=item.qty;
+
+        count += item.qty;
+
     });
 
-    document.getElementById("cartCount")
-    .innerText=count;
+
+    document.getElementById(
+        "cartCount"
+    ).innerText=count;
+
 }
 
 
-/* TOTAL */
+/* ==========================================
+   CURRENT CART TOTAL
+========================================== */
 
 function getCartTotal(){
 
     return cart.reduce(
+
         (total,item)=>
-        total+(item.price*item.qty),
+
+        total +
+        (item.price*item.qty),
+
         0
+
     );
 
 }
 
 
-/* RENDER CART */
+/* ==========================================
+   ALL TODAY TOTAL
+========================================== */
+
+function getTodayOrdersTotal(){
+
+    return orders.reduce(
+
+        (total,order)=>
+
+        total + order.total,
+
+        0
+
+    );
+
+}
+
+
+/* ==========================================
+   RENDER CART
+========================================== */
 
 function renderCart(){
 
-    const box=
-    document.getElementById("cartItems");
+    const box =
+    document.getElementById(
+        "cartItems"
+    );
+
 
     if(cart.length===0){
 
@@ -1898,7 +3698,8 @@ function renderCart(){
 
         <br><br>
 
-        <button class="btn"
+        <button
+        class="btn"
         onclick="showPage('menu')">
 
         Browse Menu
@@ -1913,45 +3714,78 @@ function renderCart(){
 
         box.innerHTML="";
 
-        cart.forEach((item,index)=>{
 
-            const total=
-            item.price*item.qty;
+        cart.forEach(
+            (item,index)=>{
 
-            box.innerHTML+=`
+            const total =
+            item.price *
+            item.qty;
+
+
+            box.innerHTML += `
 
             <div class="cart-row">
 
             <div>
 
-            <strong>${item.name}</strong>
+            <strong>
+            ${item.name}
+            </strong>
 
             <br>
 
-            <small>₹${item.price} each</small>
+            <small>
+            ₹${item.price} each
+            </small>
 
             </div>
 
-            <div class="quantity-box">
+
+            <div
+            class="quantity-box">
 
             <button
-            onclick="changeQuantity(${index},-1)">
+            onclick="
+            changeQuantity(
+                ${index},
+                -1
+            )">
+
             −
+
             </button>
 
-            <strong>${item.qty}</strong>
+
+            <strong>
+            ${item.qty}
+            </strong>
+
 
             <button
-            onclick="changeQuantity(${index},1)">
+            onclick="
+            changeQuantity(
+                ${index},
+                1
+            )">
+
             +
+
             </button>
 
             </div>
 
-            <strong>₹${total}</strong>
 
-            <button class="delete-btn"
-            onclick="removeItem(${index})">
+            <strong>
+            ₹${total}
+            </strong>
+
+
+            <button
+            class="delete-btn"
+            onclick="
+            removeItem(${index})
+            ">
 
             Remove
 
@@ -1965,86 +3799,140 @@ function renderCart(){
 
     }
 
-    const count=
+
+    const count =
     cart.reduce(
-        (sum,item)=>sum+item.qty,
+
+        (sum,item)=>
+        sum+item.qty,
+
         0
+
     );
 
-    document.getElementById("itemCount")
-    .innerText=count;
 
-    document.getElementById("cartTotal")
-    .innerText=getCartTotal();
+    document.getElementById(
+        "itemCount"
+    ).innerText=count;
+
+
+    document.getElementById(
+        "cartTotal"
+    ).innerText=getCartTotal();
+
 
     updateCartCount();
+
 }
 
 
-/* QUANTITY */
+/* ==========================================
+   CHANGE QUANTITY
+========================================== */
 
-function changeQuantity(index,value){
+function changeQuantity(
+    index,
+    value
+){
 
-    cart[index].qty+=value;
+    cart[index].qty += value;
+
 
     if(cart[index].qty<=0){
-        cart.splice(index,1);
+
+        cart.splice(
+            index,
+            1
+        );
+
     }
 
+
+    saveCart();
+
     renderCart();
+
 }
 
 
-/* REMOVE */
+/* ==========================================
+   REMOVE
+========================================== */
 
 function removeItem(index){
 
-    cart.splice(index,1);
+    cart.splice(
+        index,
+        1
+    );
+
+
+    saveCart();
 
     renderCart();
+
 }
 
 
-/* CHECKOUT */
+/* ==========================================
+   CHECKOUT
+========================================== */
 
 function goCheckout(){
 
     if(cart.length===0){
 
         alert(
-        "Your cart is empty. Please add some items."
+        "Your cart is empty."
         );
 
         showPage("menu");
 
         return;
+
     }
 
-    showPage("checkout");
+
+    showPage(
+        "checkout"
+    );
+
 }
 
 
-/* CHECKOUT SUMMARY */
+/* ==========================================
+   CHECKOUT SUMMARY
+========================================== */
 
 function renderCheckout(){
 
-    const box=
-    document.getElementById("checkoutItems");
+    const box =
+    document.getElementById(
+        "checkoutItems"
+    );
+
 
     box.innerHTML="";
 
+
     cart.forEach(item=>{
 
-        box.innerHTML+=`
+        box.innerHTML += `
 
-        <div class="checkout-item">
+        <div
+        class="checkout-item">
 
         <span>
-        ${item.name} × ${item.qty}
+
+        ${item.name}
+        × ${item.qty}
+
         </span>
 
         <strong>
+
         ₹${item.price*item.qty}
+
         </strong>
 
         </div>
@@ -2053,129 +3941,384 @@ function renderCheckout(){
 
     });
 
-    document.getElementById("checkoutTotal")
-    .innerText=getCartTotal();
+
+    document.getElementById(
+        "checkoutTotal"
+    ).innerText =
+    getCartTotal();
+
+
+    const previous =
+    document.getElementById(
+        "previousCheckout"
+    );
+
+
+    if(orders.length===0){
+
+        previous.innerHTML = `
+
+        <strong>
+        First order of the day
+        </strong>
+
+        <br>
+
+        No previous orders.
+
+        `;
+
+    }else{
+
+        previous.innerHTML = `
+
+        <strong>
+        🔄 ${orders.length}
+        previous order(s)
+        today
+        </strong>
+
+        <br><br>
+
+        Previous total:
+        <strong>
+        ₹${getTodayOrdersTotal()}
+        </strong>
+
+        <br>
+
+        After this order:
+        <strong>
+        ₹${getTodayOrdersTotal()
+        +getCartTotal()}
+        </strong>
+
+        `;
+
+    }
+
 }
 
 
-/* CREATE BILL */
+/* ==========================================
+   NEXT ORDER NUMBER
+========================================== */
 
-function createBill(){
+function getNextOrderNumber(){
 
-    const name=
-    document.getElementById("customerName")
-    .value.trim();
+    return orders.length + 1;
 
-    const phone=
-    document.getElementById("customerPhone")
-    .value.trim();
+}
 
-    const table=
-    document.getElementById("tableNumber")
-    .value.trim();
 
-    const address=
-    document.getElementById("customerAddress")
-    .value.trim();
+/* ==========================================
+   CREATE ORDER
+========================================== */
 
-    const orderType=
-    document.getElementById("orderType")
-    .value;
+function createOrder(){
+
+    const name =
+    document.getElementById(
+        "customerName"
+    ).value.trim();
+
+
+    const phone =
+    document.getElementById(
+        "customerPhone"
+    ).value.trim();
+
+
+    const table =
+    document.getElementById(
+        "tableNumber"
+    ).value.trim();
+
+
+    const address =
+    document.getElementById(
+        "customerAddress"
+    ).value.trim();
+
+
+    const orderType =
+    document.getElementById(
+        "orderType"
+    ).value;
 
 
     if(!name){
-        alert("Please enter customer name.");
+
+        alert(
+        "Please enter customer name."
+        );
+
         return false;
+
     }
+
 
     if(!phone){
-        alert("Please enter customer number.");
+
+        alert(
+        "Please enter customer number."
+        );
+
         return false;
+
     }
 
-    if(!/^[0-9]{10}$/.test(phone)){
-        alert("Please enter a valid 10 digit number.");
+
+    if(
+        !/^[0-9]{10}$/.test(
+            phone
+        )
+    ){
+
+        alert(
+        "Please enter a valid 10 digit number."
+        );
+
         return false;
+
     }
+
 
     if(cart.length===0){
-        alert("Your cart is empty.");
+
+        alert(
+        "Your cart is empty."
+        );
+
         return false;
+
     }
 
 
-    currentOrder={
+    const orderNumber =
+    getNextOrderNumber();
+
+
+    const previousTotal =
+    getTodayOrdersTotal();
+
+
+    const order = {
+
+        orderNumber:
+        orderNumber,
 
         billNumber:
-        "19C-"+Date.now()
+        "19C-"
+        +Date.now()
         .toString()
         .slice(-6),
 
         date:
         new Date()
-        .toLocaleString("en-IN"),
+        .toLocaleString(
+            "en-IN"
+        ),
 
-        name:name,
+        customerName:
+        name,
 
-        phone:phone,
+        customerPhone:
+        phone,
 
-        table:table||"N/A",
+        table:
+        table || "N/A",
 
-        address:address||"N/A",
+        address:
+        address || "N/A",
 
-        orderType:orderType,
+        orderType:
+        orderType,
 
         items:
         JSON.parse(
             JSON.stringify(cart)
         ),
 
-        total:getCartTotal()
+        total:
+        getCartTotal(),
+
+        previousTotal:
+        previousTotal,
+
+        combinedTotal:
+        previousTotal +
+        getCartTotal()
 
     };
 
 
-    document.getElementById("billNo")
-    .innerText=currentOrder.billNumber;
+    return order;
 
-    document.getElementById("billDate")
-    .innerText=currentOrder.date;
-
-    document.getElementById("billCustomer")
-    .innerText=currentOrder.name;
-
-    document.getElementById("billPhone")
-    .innerText=currentOrder.phone;
-
-    document.getElementById("billTable")
-    .innerText=currentOrder.table;
-
-    document.getElementById("billAddress")
-    .innerText=currentOrder.address;
-
-    document.getElementById("billOrderType")
-    .innerText=currentOrder.orderType;
+}
 
 
-    const billItems=
-    document.getElementById("billItems");
+/* ==========================================
+   PLACE ORDER
+========================================== */
+
+function placeOrder(){
+
+    const order =
+    createOrder();
+
+
+    if(!order){
+        return;
+    }
+
+
+    currentOrder =
+    order;
+
+
+    /* SAVE THIS ORDER */
+
+    orders.push(
+        order
+    );
+
+
+    saveOrders();
+
+
+    /* CLEAR ONLY CURRENT CART */
+
+    cart=[];
+
+    saveCart();
+
+    updateCartCount();
+
+
+    createBillDisplay(
+        order
+    );
+
+
+    showPage(
+        "billPage"
+    );
+
+
+    /*
+      OPEN WHATSAPP
+      AFTER BILL IS SHOWN
+    */
+
+    setTimeout(()=>{
+
+        sendWhatsApp();
+
+    },700);
+
+
+    /*
+      AUTOMATIC DOWNLOAD
+    */
+
+    setTimeout(()=>{
+
+        downloadBill();
+
+    },1500);
+
+}
+
+
+/* ==========================================
+   BILL DISPLAY
+========================================== */
+
+function createBillDisplay(
+    order
+){
+
+    document.getElementById(
+        "billNo"
+    ).innerText =
+    order.billNumber;
+
+
+    document.getElementById(
+        "billDate"
+    ).innerText =
+    order.date;
+
+
+    document.getElementById(
+        "billCustomer"
+    ).innerText =
+    order.customerName;
+
+
+    document.getElementById(
+        "billPhone"
+    ).innerText =
+    order.customerPhone;
+
+
+    document.getElementById(
+        "billTable"
+    ).innerText =
+    order.table;
+
+
+    document.getElementById(
+        "billAddress"
+    ).innerText =
+    order.address;
+
+
+    document.getElementById(
+        "billOrderType"
+    ).innerText =
+    order.orderType;
+
+
+    document.getElementById(
+        "orderBadge"
+    ).innerText =
+    "ORDER #"
+    +order.orderNumber;
+
+
+    const billItems =
+    document.getElementById(
+        "billItems"
+    );
+
 
     billItems.innerHTML="";
 
 
-    currentOrder.items.forEach(item=>{
+    order.items.forEach(
+        item=>{
 
-        billItems.innerHTML+=`
+        billItems.innerHTML += `
 
         <tr>
 
-        <td>${item.name}</td>
+        <td>
+        ${item.name}
+        </td>
 
-        <td>${item.qty}</td>
+        <td>
+        ${item.qty}
+        </td>
 
-        <td>₹${item.price}</td>
+        <td>
+        ₹${item.price}
+        </td>
 
-        <td>₹${item.price*item.qty}</td>
+        <td>
+        ₹${item.price*item.qty}
+        </td>
 
         </tr>
 
@@ -2184,193 +4327,559 @@ function createBill(){
     });
 
 
-    document.getElementById("billTotal")
-    .innerText=currentOrder.total;
+    document.getElementById(
+        "billTotal"
+    ).innerText =
+    order.total;
 
-    return true;
+
+    document.getElementById(
+        "combinedTodayTotal"
+    ).innerText =
+    order.combinedTotal;
+
+
+    renderPreviousOrdersOnBill(
+        order
+    );
+
 }
 
 
-/* PLACE ORDER */
+/* ==========================================
+   PREVIOUS ORDERS ON BILL
+========================================== */
 
-function placeOrder(){
+function renderPreviousOrdersOnBill(
+    current
+){
 
-    if(!createBill()){
+    const box =
+    document.getElementById(
+        "previousOrdersBill"
+    );
+
+
+    if(current.orderNumber===1){
+
+        box.innerHTML=`
+
+        <div
+        class="previous-box">
+
+        🎉 This is your
+        <strong>first order</strong>
+        today.
+
+        </div>
+
+        `;
+
         return;
+
     }
 
-    showPage("billPage");
+
+    let html=`
+
+    <div
+    class="previous-box">
+
+    <h3>
+    Previous Orders Today
+    </h3>
+
+    `;
+
+
+    orders
+    .filter(
+        order=>
+        order.orderNumber <
+        current.orderNumber
+    )
+    .forEach(
+        order=>{
+
+        html += `
+
+        <div
+        style="
+        padding:10px 0;
+        border-bottom:1px solid #ddd;
+        ">
+
+        <strong>
+        Order #${order.orderNumber}
+        </strong>
+
+        <br>
+
+        ${order.items
+        .map(
+            item=>
+            item.name
+            +" × "
+            +item.qty
+        )
+        .join(", ")}
+
+        <br>
+
+        <strong>
+        ₹${order.total}
+        </strong>
+
+        </div>
+
+        `;
+
+    });
+
+
+    html += `
+
+    <br>
+
+    <strong>
+    Previous Orders Total:
+    ₹${current.previousTotal}
+    </strong>
+
+    </div>
+
+    `;
+
+
+    box.innerHTML =
+    html;
+
+}
+
+
+/* ==========================================
+   START ANOTHER ORDER
+========================================== */
+
+function startAnotherOrder(){
 
     /*
-       Keep currentOrder available so
-       the customer can download/share
-       the bill after the order.
+      Customer can order again.
+      Previous orders remain saved.
     */
-
-    setTimeout(()=>{
-        downloadBill();
-    },500);
-
-    setTimeout(()=>{
-        sendWhatsApp();
-    },1500);
 
     cart=[];
 
+    saveCart();
+
     updateCartCount();
+
+    showPage("menu");
+
 }
 
 
-/* WHATSAPP ORDER */
+/* ==========================================
+   ORDER HISTORY
+========================================== */
+
+function renderOrderHistory(){
+
+    const box =
+    document.getElementById(
+        "ordersHistory"
+    );
+
+
+    if(orders.length===0){
+
+        box.innerHTML=`
+
+        <div class="no-orders">
+
+        🧾 No orders placed today.
+
+        <br><br>
+
+        <button
+        class="btn"
+        onclick="showPage('menu')">
+
+        Order Now
+
+        </button>
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    box.innerHTML="";
+
+
+    orders.forEach(
+        order=>{
+
+        let items="";
+
+
+        order.items.forEach(
+            item=>{
+
+            items += `
+
+            <div
+            class="history-item">
+
+            <span>
+            ${item.name}
+            × ${item.qty}
+            </span>
+
+            <strong>
+            ₹${item.price*item.qty}
+            </strong>
+
+            </div>
+
+            `;
+
+        });
+
+
+        box.innerHTML += `
+
+        <div
+        class="order-history-card">
+
+        <h3>
+
+        <span>
+        Order #${order.orderNumber}
+        </span>
+
+        <span>
+        ₹${order.total}
+        </span>
+
+        </h3>
+
+        <p>
+        🧾 ${order.billNumber}
+        </p>
+
+        <p>
+        🕐 ${order.date}
+        </p>
+
+        <br>
+
+        ${items}
+
+        <div
+        class="history-total">
+
+        Order Total:
+        ₹${order.total}
+
+        </div>
+
+        </div>
+
+        `;
+
+    });
+
+
+    box.innerHTML += `
+
+    <div
+    class="order-history-card">
+
+    <h3>
+
+    Today's Combined Total
+
+    <span>
+    ₹${getTodayOrdersTotal()}
+    </span>
+
+    </h3>
+
+    <p>
+    ${orders.length}
+    order(s) placed today.
+    </p>
+
+    </div>
+
+    `;
+
+}
+
+
+/* ==========================================
+   WHATSAPP MESSAGE
+========================================== */
 
 function sendWhatsApp(){
 
     if(!currentOrder){
+
+        alert(
+        "No current order found."
+        );
+
         return;
+
     }
 
-    let message=
-    "🍽️ *19's Cafe - NEW ORDER*%0A%0A";
 
-    message+=
-    "🧾 *Bill No:* "+
-    currentOrder.billNumber+
-    "%0A";
+    const order =
+    currentOrder;
 
-    message+=
-    "👤 *Customer:* "+
-    currentOrder.name+
-    "%0A";
 
-    message+=
-    "📞 *Number:* "+
-    currentOrder.phone+
-    "%0A";
+    let message="";
 
-    message+=
-    "🪑 *Table:* "+
-    currentOrder.table+
-    "%0A";
 
-    message+=
-    "📍 *Address:* "+
-    currentOrder.address+
-    "%0A";
+    if(order.orderNumber===1){
 
-    message+=
-    "🍴 *Order Type:* "+
-    currentOrder.orderType+
+        message =
+        "🟢 *NEW ORDER - 19's Cafe*";
+
+    }else{
+
+        message =
+        "🔵 *ADDITIONAL ORDER - 19's Cafe*";
+
+    }
+
+
+    message +=
     "%0A%0A";
 
-    message+="*ITEMS*%0A";
+
+    message +=
+    "🧾 *Order #:* "
+    +order.orderNumber
+    +"%0A";
 
 
-    currentOrder.items.forEach(item=>{
+    message +=
+    "📄 *Bill No:* "
+    +order.billNumber
+    +"%0A";
 
-        message+=
-        "• "+item.name+
-        " × "+item.qty+
-        " = ₹"+
-        (item.price*item.qty)+
-        "%0A";
+
+    message +=
+    "👤 *Customer:* "
+    +order.customerName
+    +"%0A";
+
+
+    message +=
+    "📞 *Number:* "
+    +order.customerPhone
+    +"%0A";
+
+
+    message +=
+    "🪑 *Table:* "
+    +order.table
+    +"%0A";
+
+
+    message +=
+    "📍 *Address:* "
+    +order.address
+    +"%0A";
+
+
+    message +=
+    "🍴 *Order Type:* "
+    +order.orderType
+    +"%0A%0A";
+
+
+    message +=
+    "*THIS ORDER*%0A";
+
+
+    order.items.forEach(
+        item=>{
+
+        message +=
+        "• "
+        +item.name
+        +" × "
+        +item.qty
+        +" = ₹"
+        +(item.price*item.qty)
+        +"%0A";
 
     });
 
 
-    message+=
-    "%0A💰 *GRAND TOTAL: ₹"+
-    currentOrder.total+
-    "*%0A%0A";
-
-    message+=
-    "Order received from 19's Cafe website.";
+    message +=
+    "%0A💰 *THIS ORDER TOTAL: ₹"
+    +order.total
+    +"*%0A";
 
 
-    const url=
-    "https://wa.me/"+
-    WHATSAPP_NUMBER+
-    "?text="+message;
+    if(order.orderNumber>1){
+
+        message +=
+        "%0A🔄 *PREVIOUS ORDERS TODAY:* "
+        +order.previousTotal
+        +"%0A";
 
 
-    window.open(url,"_blank");
+        message +=
+        "💰 *TODAY'S COMBINED TOTAL: ₹"
+        +order.combinedTotal
+        +"*%0A";
+
+    }
+
+
+    message +=
+    "%0A📲 Order from 19's Cafe website.";
+
+
+    const url =
+    "https://wa.me/"
+    +WHATSAPP_NUMBER
+    +"?text="
+    +message;
+
+
+    window.open(
+        url,
+        "_blank"
+    );
+
 }
 
 
-/* DOWNLOAD BILL */
+/* ==========================================
+   DOWNLOAD BILL
+========================================== */
 
 function downloadBill(){
 
     if(!currentOrder){
-        alert("No bill available.");
+
+        alert(
+        "No bill available."
+        );
+
         return;
+
     }
 
-    const bill=
-    document.getElementById("billContainer");
 
-    html2canvas(bill,{
-        backgroundColor:"#ffffff",
+    const bill =
+    document.getElementById(
+        "billContainer"
+    );
+
+
+    html2canvas(
+        bill,
+        {
+
+        backgroundColor:
+        "#ffffff",
+
         scale:2,
+
         useCORS:true
-    }).then(canvas=>{
 
-        const link=
-        document.createElement("a");
+        }
 
-        link.download=
-        "19s-Cafe-Bill-"+
-        currentOrder.billNumber+
-        ".png";
+    ).then(
+        canvas=>{
 
-        link.href=
-        canvas.toDataURL("image/png");
+        const link =
+        document.createElement(
+            "a"
+        );
 
-        link.click();
 
-    });
+        link.download =
+        "19s-Cafe-Order-"
+        +currentOrder.orderNumber
+        +"-"
+        +currentOrder.billNumber
+        +".png";
 
+
+        link.href =
+     canvas.toDateURL(
+            "image/png"
+         );   
+            
+          link.click();
+        });
 }
-
-
-/* TABLE BOOKING */
+/* ==========================================
+   TABLE BOOKING
+========================================== */
 
 function bookTable(){
 
-    const name=
-    document.getElementById("bookName")
-    .value.trim();
+    const name =
+    document.getElementById(
+        "bookName"
+    ).value.trim();
 
-    const phone=
-    document.getElementById("bookPhone")
-    .value.trim();
 
-    const table=
-    document.getElementById("bookTable")
-    .value.trim();
+    const phone =
+    document.getElementById(
+        "bookPhone"
+    ).value.trim();
 
-    const date=
-    document.getElementById("bookDate")
-    .value;
 
-    const time=
-    document.getElementById("bookTime")
-    .value;
+    const table =
+    document.getElementById(
+        "bookTable"
+    ).value.trim();
 
-    const persons=
-    document.getElementById("bookPersons")
-    .value;
 
-    const request=
-    document.getElementById("bookRequest")
-    .value.trim();
+    const date =
+    document.getElementById(
+        "bookDate"
+    ).value;
+
+
+    const time =
+    document.getElementById(
+        "bookTime"
+    ).value;
+
+
+    const persons =
+    document.getElementById(
+        "bookPersons"
+    ).value;
+
+
+    const request =
+    document.getElementById(
+        "bookRequest"
+    ).value.trim();
 
 
     if(
-        !name||
-        !phone||
-        !table||
-        !date||
-        !time||
+        !name ||
+        !phone ||
+        !table ||
+        !date ||
+        !time ||
         !persons
     ){
 
@@ -2379,72 +4888,145 @@ function bookTable(){
         );
 
         return;
+
     }
 
 
-    if(!/^[0-9]{10}$/.test(phone)){
+    if(
+        !/^[0-9]{10}$/.test(
+            phone
+        )
+    ){
 
         alert(
         "Please enter a valid 10 digit number."
         );
 
         return;
+
     }
 
 
-    let message=
-    "🍽️ *19's Cafe - TABLE BOOKING*%0A%0A";
-
-    message+=
-    "👤 *Customer:* "+
-    name+
-    "%0A";
-
-    message+=
-    "📞 *Number:* "+
-    phone+
-    "%0A";
-
-    message+=
-    "🪑 *Table:* "+
-    table+
-    "%0A";
-
-    message+=
-    "📅 *Date:* "+
-    date+
-    "%0A";
-
-    message+=
-    "🕐 *Time:* "+
-    time+
-    "%0A";
-
-    message+=
-    "👥 *Guests:* "+
-    persons+
-    "%0A";
-
-    message+=
-    "📝 *Special Request:* "+
-    (request||"None");
+    let message =
+    "🍽️ *19's Cafe - TABLE BOOKING*";
 
 
-    const url=
-    "https://wa.me/"+
-    WHATSAPP_NUMBER+
-    "?text="+
-    message;
+    message +=
+    "%0A%0A";
 
-    window.open(url,"_blank");
+
+    message +=
+    "👤 *Customer:* "
+    +name
+    +"%0A";
+
+
+    message +=
+    "📞 *Number:* "
+    +phone
+    +"%0A";
+
+
+    message +=
+    "🪑 *Table:* "
+    +table
+    +"%0A";
+
+
+    message +=
+    "📅 *Date:* "
+    +date
+    +"%0A";
+
+
+    message +=
+    "🕐 *Time:* "
+    +time
+    +"%0A";
+
+
+    message +=
+    "👥 *Guests:* "
+    +persons
+    +"%0A";
+
+
+    message +=
+    "📝 *Special Request:* "
+    +(request || "None");
+
+
+    const url =
+    "https://wa.me/"
+    +WHATSAPP_NUMBER
+    +"?text="
+    +message;
+
+
+    window.open(
+        url,
+        "_blank"
+    );
+
 }
 
 
-/* INITIALIZE */
+/* ==========================================
+   INITIALIZE
+========================================== */
+
+loadSavedData();
 
 updateCartCount();
+
+
+/* ==========================================
+   AUTO CHECK FOR NEW DAY
+========================================== */
+
+setInterval(()=>{
+
+    const savedDate =
+    localStorage.getItem(
+        STORAGE_DATE
+    );
+
+
+    const today =
+    getTodayKey();
+
+
+    if(
+        savedDate &&
+        savedDate!==today
+    ){
+
+        localStorage.removeItem(
+            STORAGE_CART
+        );
+
+        localStorage.removeItem(
+            STORAGE_ORDERS
+        );
+
+        localStorage.setItem(
+            STORAGE_DATE,
+            today
+        );
+
+
+        cart=[];
+
+        orders=[];
+
+        updateCartCount();
+
+    }
+
+},60000);
 
 </script>
 
 </body>
+
 </html>
