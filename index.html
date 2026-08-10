@@ -3519,6 +3519,109 @@ function scrollToCategory(id){
 
 }
 
+function goMenuSession(
+    id,
+    button
+){
+
+    const category =
+        document.getElementById(id);
+
+
+    if(!category){
+        return;
+    }
+
+
+    /*
+       Change active button
+    */
+
+    document
+    .querySelectorAll(
+        ".menu-session-bar button"
+    )
+    .forEach(btn=>{
+
+        btn.classList.remove(
+            "active"
+        );
+
+    });
+
+
+    button.classList.add(
+        "active"
+    );
+
+
+    /*
+       Change floating title
+    */
+
+    const titles = {
+
+        pizza:"🍕 Pizza",
+
+        burger:"🍔 Burger",
+
+        colddrink:"🍻 Cold Drinks",
+
+        sandwich:"🥪 Sandwich",
+
+        pasta:"🍜 Pasta",
+
+        fries:"🍟 Fries",
+
+        coffee:"☕ Coffee",
+
+        starters:"🍱 Starters",
+
+        dessert:"🍰 Desserts"
+
+    };
+
+
+    document.getElementById(
+        "menuSessionTitle"
+    ).innerText =
+        titles[id];
+
+
+    /*
+       Scroll only to selected
+       menu session
+    */
+
+    const navbarHeight = 70;
+
+    const sessionBarHeight = 55;
+
+    const titleHeight = 50;
+
+
+    const position =
+        category.getBoundingClientRect().top
+        +
+        window.scrollY
+        -
+        navbarHeight
+        -
+        sessionBarHeight
+        -
+        titleHeight;
+
+
+    window.scrollTo({
+
+        top:position,
+
+        behavior:"smooth"
+
+    });
+
+}
+
 
 /* ==========================================
    ADD TO CART
